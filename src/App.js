@@ -1,10 +1,17 @@
 import React from "react";
-import 'react-toastify/dist/ReactToastify.css';
+import { Route, Routes } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import Footer from "./Components/Shared/Footer";
+import Navbar from "./Components/Shared/Navbar";
+import Home from "./Pages/Home";
 function App() {
   return (
     <div>
-      <button class="btn">Button</button>
-      <h1 className="text-3xl font-bold">Hello world!</h1>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+      </Routes>
+      <Footer />
     </div>
   );
 }
