@@ -40,7 +40,7 @@ const Navbar = () => {
               <img src="https://placeimg.com/80/80/people" alt='' />
             </div>
           </label>
-          <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-5 shadow bg-base-100 rounded-box w-52">
+          <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-4 shadow bg-base-100 rounded-box w-52">
             <li><a href="/">Admin console</a></li>
             <li><a href="/">My Settings</a></li>
             <li><a href="/">Privacy policy</a></li>
