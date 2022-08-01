@@ -9,6 +9,7 @@ const Navbar = () => {
     <li><Link to='/'>Support</Link></li>
     <li><Link to='/'>Blog</Link></li>
     <li><Link to='/about_us'>About Us</Link></li>
+    <li><Link to='/contact_us'>Contact Us</Link></li>
 
   </>
   return (
@@ -22,7 +23,7 @@ const Navbar = () => {
             {navItems}
           </ul>
         </div>
-        <a class="btn btn-ghost normal-case text-xl">ProTrack</a>
+        <Link to='/' class="btn btn-ghost normal-case text-xl">ProTrack</Link>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal p-0">
