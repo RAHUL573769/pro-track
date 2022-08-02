@@ -8,7 +8,6 @@ import MyTasks from "./Components/Dashboard/MyTasks";
 import Teams from "./Components/Dashboard/Teams";
 import Footer from "./Components/Shared/Footer";
 import Navbar from "./Components/Shared/Navbar";
-import Dashboard from "./Pages/Dashboard";
 import AboutUs from "./Pages/AboutUs";
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
@@ -25,8 +24,8 @@ function App() {
           <Route path="meetings" element={<Meetings></Meetings>}></Route>
           <Route path="issues" element={<Issues></Issues>}></Route>
         </Route>
-
-        <Route path="/contact_us" element={<Contact />}></Route>
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<Contact />}></Route>
       </Routes>
       <Footer />
     </div>
