@@ -1,7 +1,7 @@
 import React from "react";
 
-const Blogs = () => {
+const Meetings = () => {
   return <div></div>;
 };
 
-export default Blogs;
+export default Meetings;
