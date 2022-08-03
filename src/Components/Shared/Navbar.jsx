@@ -29,7 +29,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-blue">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -61,16 +61,16 @@ const Navbar = () => {
             {navItems}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
+        <Link to="/" className="text-white cursor-pointer text-3xl font-extrabold ml-2">
           ProTrack
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal p-0">{navItems}</ul>
+        <ul className="menu menu-horizontal p-0 font-bold text-white">{navItems}</ul>
       </div>
       <div className="navbar-end">
         <div className="flex-none">
-          <div className="mr-5 text-2xl">
+          <div className="mr-5 text-2xl text-white">
             <GrNotification />
           </div>
         </div>
