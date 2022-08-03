@@ -2,7 +2,8 @@ import { FiMoreVertical } from "react-icons/fi";
 import { GrNotification } from "react-icons/gr";
 import { Link } from "react-router-dom";
 const Navbar = () => {
-<<<<<<< HEAD
+  // <<<<<<< HEAD
+
   const navItems = (
     <>
       <li>
@@ -18,22 +19,17 @@ const Navbar = () => {
         <Link to="/">Blog</Link>
       </li>
       <li>
+        <Link to="/about_us">About Us</Link>
+      </li>
+      <li>
+        <Link to="/contact_us">Contact Us</Link>
+      </li>
+      <li>
         <Link to="/dashboard">Dashboard</Link>
       </li>
     </>
   );
-=======
-  const navItems = <>
 
-    <li><Link to='/'>Product</Link></li>
-    <li><Link to='/'>Customers</Link></li>
-    <li><Link to='/'>Support</Link></li>
-    <li><Link to='/'>Blog</Link></li>
-    <li><Link to='/about_us'>About Us</Link></li>
-    <li><Link to='/contact_us'>Contact Us</Link></li>
-
-  </>
->>>>>>> 3167a453ef7dd9cb9c17088a304efdf2b14120b2
   return (
     <div class="navbar bg-base-100">
       <div class="navbar-start">
@@ -54,18 +50,22 @@ const Navbar = () => {
               />
             </svg>
           </label>
-<<<<<<< HEAD
+
           <ul
             tabindex="0"
             class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-200 rounded-box w-52"
           >
-=======
-          <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-200 rounded-box w-52">
->>>>>>> 3167a453ef7dd9cb9c17088a304efdf2b14120b2
-            {navItems}
+            <ul
+              tabindex="0"
+              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-200 rounded-box w-52"
+            >
+              {navItems}
+            </ul>
           </ul>
         </div>
-        <Link to='/' class="btn btn-ghost normal-case text-xl">ProTrack</Link>
+        <Link to="/" class="btn btn-ghost normal-case text-xl">
+          ProTrack
+        </Link>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal p-0">{navItems}</ul>
