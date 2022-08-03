@@ -29,7 +29,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-blue">
+    <div className="navbar bg-blue fixed z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -70,7 +70,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         <div className="flex-none">
-          <div className="mr-5 text-2xl text-white">
+          <div className="mr-5 text-2xl">
             <GrNotification />
           </div>
         </div>
