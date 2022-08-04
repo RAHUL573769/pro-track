@@ -4,6 +4,9 @@ import process from '../../src/images/Process.jpg';
 const AboutUs = () => {
     return (
         <div>
+            <div>
+                <h1 className='text-3xl text-cyan-700 font-bold text-center m-24'>About US</h1>
+            </div>
             <div className='grid grid-cols-2 gap-4 m-24'>
                 <div>
                     <h1 className='text-3xl text-red-700 text-center font-bold'>Our Vision</h1>
