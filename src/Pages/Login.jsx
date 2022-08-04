@@ -11,14 +11,14 @@ const Login = () => {
   } = useForm();
   const onSubmit = (data) => console.log(data);
   return (
-    <div>
+    <div className="mb-56 md:mb-0">
       <section className="h-screen">
         <div className="container mx-auto px-6 py-12 h-full">
           <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
             <div className="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
               <img src={unlock} className="w-full" alt="Login Info" />
             </div>
-            <div className="md:w-8/12 lg:w-5/12 lg:ml-20">
+            <div className="md:w-8/12 w-full lg:w-5/12 lg:ml-20">
               <h2 className="font-bold text-center text-3xl mb-5">
                 Login To Access
               </h2>
