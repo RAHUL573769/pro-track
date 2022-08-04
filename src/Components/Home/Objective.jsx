@@ -4,7 +4,7 @@ import objective from '../../Assets/images/objective.jpg'
 const Objective = () => {
   return (
 
-    <div className='mx-16 my-5'>
+    <div className='mx-16 p-5'>
       <div className="hero min-h-screen bg-seaBlue p-20 rounded-3xl">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img src={objective} alt=" " className="max-w-lg rounded-lg shadow-2xl w-96" />

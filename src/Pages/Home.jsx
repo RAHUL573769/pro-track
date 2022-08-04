@@ -8,7 +8,7 @@ import UserIcon from "../Components/Home/UserIcon";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-slate-300">
       <Hero />
       <Txt></Txt>
       <Introduction></Introduction>
