@@ -1,8 +1,8 @@
 import React from "react";
 
 const Txt = () => {
-  return (
-    <div className="text-center w-full p-32 bg-white">
+    return (
+        <div className="text-center w-full p-32">
       <h2 className="text-4xl font-bold">
         It’s more than work. It’s a way of working together.
       </h2>
