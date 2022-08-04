@@ -2,24 +2,15 @@ import React from "react";
 import packages from "../../Assets/images/packages.jpg";
 import protrack from "../../Assets/images/pro1.jpg";
 import discover from "../../Assets/images/discover.jpg";
+import { Link } from "react-router-dom";
 const Summery = () => {
   return (
     <>
       <div className="mx-10 ">
-        <div className="text-center mx-10 px-10 my-24">
-          <h2 className="text-5xl font-bold ">
-            It’s more than work. It’s a way of working together.
-          </h2>
-          <p className="text-3xl mt-5">
-            Start with a <span className="text-primary">Pro-Track</span> board,
-            lists, and cards. Customize and expand with more features as your
-            teamwork grows. Manage projects, organize tasks, and build team
-            spirit—all in one place.
-          </p>
-        </div>
+       
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 px-10  mx-10 mt-10">
-          <div className="card w-96 bg-base-100 shadow-xl">
-            <figure className="px-10 pt-10">
+          <div className="card w-96 bg-base-100 shadow-xl transform transition duration-500 hover:scale-110">
+            <figure>
               <img src={packages} className="rounded-xl" />
             </figure>
             <div className="card-body items-center text-center">
@@ -30,8 +21,8 @@ const Summery = () => {
               </div>
             </div>
           </div>
-          <div className="card w-96 bg-base-100 shadow-xl">
-            <figure className="px-10 pt-10">
+          <div className="card w-96 bg-base-100 shadow-xl transform transition duration-500 hover:scale-110">
+            <figure>
               <img src={protrack} className="rounded-xl" />
             </figure>
             <div className="card-body items-center text-center">
@@ -41,12 +32,12 @@ const Summery = () => {
                 any type of project, workflow, or task tracking.
               </p>
               <div className="card-actions">
-                <button className="btn btn-primary">Tour Pro-track</button>
+                <Link to="/about" className="btn btn-primary">Tour Pro-track</Link>
               </div>
             </div>
           </div>
-          <div className="card w-96 bg-base-100 shadow-xl">
-            <figure className="px-10 pt-10">
+          <div className="card w-96 bg-base-100 shadow-xl transform transition duration-500 hover:scale-110">
+            <figure>
               <img src={discover} className="rounded-xl" />
             </figure>
             <div className="card-body items-center text-center">
