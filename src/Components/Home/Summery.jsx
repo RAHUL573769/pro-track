@@ -7,7 +7,6 @@ const Summery = () => {
   return (
     <>
       <div className="mx-10 ">
-       
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 px-10  mx-10 mt-10">
           <div className="card w-96 bg-base-100 shadow-xl transform transition duration-500 hover:scale-110">
             <figure>
@@ -32,7 +31,9 @@ const Summery = () => {
                 any type of project, workflow, or task tracking.
               </p>
               <div className="card-actions">
-                <Link to="/about" className="btn btn-primary">Tour Pro-track</Link>
+                <Link to="/about" className="btn btn-primary">
+                  Tour Pro-track
+                </Link>
               </div>
             </div>
           </div>
