@@ -13,25 +13,23 @@ import image5 from '../../images/drive.png';
 import image9 from '../../images/skype.png';
 
 const UserIcon = () => {
-    return (
-        <div className='mx-20 my-24'>
-            <h2 className='mx-20 mt-10 text-center text-orange-400 text-4xl font-bold'>Join over 2,000 teams worldwide that are using <span className='text-blue'>Pro-track</span> to get more done.</h2>
-          <div className='grid grid-cols-6 mt-10 mx-20 item-center'>
-            <img className='w-32 h-24 bg-white ' src={image1} alt="" />
-            <img className='w-32 h-24 bg-white ' src={image2} alt="" />
-            <img className='w-32 h-24 bg-white ' src={image3} alt="" />
-            <img className='w-32 h-24 bg-white ' src={image4} alt="" />
-            <img className='w-32 h-24 bg-white ' src={image5} alt="" />
-            <img className='w-32 h-24 bg-white ' src={image6} alt="" />
-            <img className='w-32 mt-8 h-24 bg-white ' src={image7} alt="" />
-            <img className='w-32 mt-8 h-24 bg-white ' src={image8} alt="" />   
-            <img className='w-32 mt-8 h-24 bg-white ' src={image9} alt="" />
-            <img className='w-32 mt-8 h-24 bg-white ' src={image10} alt="" />
-            <img className='w-32 mt-8 h-24 bg-white ' src={image11} alt="" />
-            <img className='w-32 mt-8 h-24 bg-white ' src={image12} alt="" />   
-          </div>
-        </div>
-    );
+  return (
+    <div className='flex bg-navyBlue py-52 my-24 mx-16 rounded-3xl'>
+      <div>
+        <h2 className='mx-20 mt-10 text-center text-orange-400 text-4xl font-bold'>Connect to <span className='text-primary'>Pro-track</span> with your preferred apps</h2>
+      </div>
+      <div className='grid grid-cols-6 mx-20 item-center relative'>
+       <img className='w-16 absolute rounded-full top-32 -left-16' src={image4} alt="" />
+        <img className='w-16 absolute left-48 bottom-28 rounded-full' src={image5} alt="" />
+        <img className='w-16 absolute bottom-40 left-16' src={image6} alt="" />
+        <img className='w-16 absolute top-48 left-16' src={image7} alt="" />
+        <img className='w-16 absolute top-20 left-20 rounded-full' src={image8} alt="" />
+        <img className='w-16 absolute top-32 left-48' src={image9} alt="" />
+        <img className='w-16' src={image10} alt="" />
+        <img className='w-16 absolute -left-24 bottom-32 bg-white rounded-full' src={image11} alt="" />
+      </div>
+    </div>
+  );
 };
 
 export default UserIcon;

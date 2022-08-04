@@ -9,7 +9,7 @@ const Introduction = () => {
           <div className="mx-10">
             <h1 className="text-4xl font-bold">
               Make Your Task More Easy With <span className="text-blue">ProTrack</span></h1>
-            <p className="text-xl my-10">
+            <p className="text-base my-10 text-slate-600 font-serif tracking-widest">
               Protrack is a web and mobile Task management platform designed to
               help teams organize, track, and manage their task and also helps
               teams move work forward. Collaborate, manage projects, and reach
@@ -19,8 +19,8 @@ const Introduction = () => {
             </p>
             <Link to='/' className="btn bg-blue hover:bg-violet-500 border-0">Learn More <BsArrowRight className="ml-3"/></Link>
           </div>
-          <img
-            src="https://i.ibb.co/tqFYXMP/luis-villasmil-ml-Vb-Mbxf-WI4-unsplash.jpg"
+          <img style={{"height":'400px'}}
+            src="https://i.ibb.co/tcGFthC/task-template-create.png"
             alt=""
             className="max-w-sm rounded-lg shadow-2xl"
           />
