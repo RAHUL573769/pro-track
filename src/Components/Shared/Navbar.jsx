@@ -16,21 +16,19 @@ const Navbar = () => {
       <li>
         <Link to="/">Blog</Link>
       </li>
+
       <li>
-        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/about">About</Link>
       </li>
       <li>
-        <Link to="/about">About Us</Link>
-      </li>
-      <li>
-        <Link to="/contact">Contact Us</Link>
+        <Link to="/contact">Contact</Link>
       </li>
     </>
   );
 
   return (
     <div className="navbar bg-blue fixed z-50">
-      <div className="navbar-start">
+      <div className="navbar-start ">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
             <svg
@@ -61,12 +59,17 @@ const Navbar = () => {
             {navItems}
           </ul>
         </div>
-        <Link to="/" className="text-white cursor-pointer text-3xl font-extrabold ml-2">
+        <Link
+          to="/"
+          className="text-white cursor-pointer text-3xl font-extrabold ml-2"
+        >
           ProTrack
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal p-0 font-bold text-white">{navItems}</ul>
+        <ul className="menu menu-horizontal p-0 font-bold text-white">
+          {navItems}
+        </ul>
       </div>
       <div className="navbar-end">
         <div className="flex-none">

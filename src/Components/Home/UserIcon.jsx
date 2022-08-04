@@ -1,16 +1,16 @@
-import React from 'react';
-import image1 from '../../images/telegram.jpg';
-import image2 from '../../images/gmail.png';
-import image3 from '../../images/linkdin (2).png';
-import image4 from '../../images/twiter.jpg';
-import image11 from '../../images/github.png';
-import image6 from '../../images/facebook.png';
-import image7 from '../../images/google.png';
-import image8 from '../../images/zoom.png';
-import image12 from '../../images/calander.png';
-import image10 from '../../images/meet (2).png';
-import image5 from '../../images/drive.png';
-import image9 from '../../images/skype.png';
+import React from "react";
+import image1 from "../../images/telegram.jpg";
+import image2 from "../../images/gmail.png";
+import image3 from "../../images/linkdin (2).png";
+import image4 from "../../images/twiter.jpg";
+import image11 from "../../images/github.png";
+import image6 from "../../images/facebook.png";
+import image7 from "../../images/google.png";
+import image8 from "../../images/zoom.png";
+import image12 from "../../images/calander.png";
+import image10 from "../../images/meet (2).png";
+import image5 from "../../images/drive.png";
+import image9 from "../../images/skype.png";
 
 const UserIcon = () => {
   return (
