@@ -25,11 +25,6 @@ const Introduction = () => {
             className="max-w-sm rounded-lg shadow-2xl"
           />
         </div>
-        <img
-          src="https://i.ibb.co/tqFYXMP/luis-villasmil-ml-Vb-Mbxf-WI4-unsplash.jpg"
-          alt=""
-          className="max-w-sm rounded-lg shadow-2xl"
-        />
       </div>
   );
 };
