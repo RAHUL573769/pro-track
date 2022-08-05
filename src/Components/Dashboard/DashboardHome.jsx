@@ -36,6 +36,9 @@ const DashboardHome = () => {
             <li>
               <Link to="/dashboard/meetings">Meetings</Link>
             </li>
+            <li>
+              <Link to="/dashboard/issues">Issues</Link>
+            </li>
             {/* <li>
               <Link>Tasks</Link>
             </li> */}
