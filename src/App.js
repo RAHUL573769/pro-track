@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
+import Calender from "./Components/Dashboard/Calender";
 import DashboardHome from "./Components/Dashboard/DashboardHome";
 import DashWelcome from "./Components/Dashboard/DashWelcome";
 import Issues from "./Components/Dashboard/Issues";
@@ -28,6 +29,7 @@ function App() {
             <Route path="tasks" element={<MyTasks></MyTasks>}></Route>
             <Route path="login" element={<Login />}></Route>
             <Route path="issues" element={<Issues />}></Route>
+            <Route path="calender" element={<Calender />}></Route>
           </Route>
         </Routes>
       </div>
