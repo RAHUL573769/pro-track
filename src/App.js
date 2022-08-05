@@ -5,6 +5,7 @@ import Calender from "./Components/Dashboard/Calender";
 import DashboardHome from "./Components/Dashboard/DashboardHome";
 import DashWelcome from "./Components/Dashboard/DashWelcome";
 import Issues from "./Components/Dashboard/Issues";
+import Meetings from "./Components/Dashboard/Meetings";
 import MyTasks from "./Components/Dashboard/MyTasks";
 import Projects from "./Components/Dashboard/Projects";
 import Footer from "./Components/Shared/Footer";
@@ -30,6 +31,7 @@ function App() {
             <Route path="login" element={<Login />}></Route>
             <Route path="issues" element={<Issues />}></Route>
             <Route path="calender" element={<Calender />}></Route>
+            <Route path="meetings" element={<Meetings />}></Route>
           </Route>
         </Routes>
       </div>
