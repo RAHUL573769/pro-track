@@ -4,6 +4,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Calender from "./Components/Dashboard/Calender";
 import DashboardHome from "./Components/Dashboard/DashboardHome";
 import DashWelcome from "./Components/Dashboard/DashWelcome";
+import Feedback from "./Components/Dashboard/Feedback";
+import Files from "./Components/Dashboard/Files";
 import Issues from "./Components/Dashboard/Issues";
 import Meetings from "./Components/Dashboard/Meetings";
 import MyTasks from "./Components/Dashboard/MyTasks";
@@ -32,6 +34,8 @@ function App() {
             <Route path="issues" element={<Issues />}></Route>
             <Route path="calender" element={<Calender />}></Route>
             <Route path="meetings" element={<Meetings />}></Route>
+            <Route path="feedbacks" element={<Feedback></Feedback>}></Route>
+            <Route path="files" element={<Files></Files>}></Route>
           </Route>
         </Routes>
       </div>
