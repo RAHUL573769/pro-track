@@ -5,7 +5,7 @@ import discover from "../../Assets/images/discover.jpg";
 import { Link } from "react-router-dom";
 const Summery = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mx-16 my-16">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mx-16  my-16">
       <div className="card max-w-lg bg-base-100 shadow-xl transform transition duration-500 hover:scale-110">
               <figure>
                 <img src={packages} className="rounded-xl" />
@@ -51,8 +51,6 @@ const Summery = () => {
                 </div>
               </div>
             </div>
-
-
       </div>
   );
 };
