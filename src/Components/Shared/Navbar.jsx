@@ -30,7 +30,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-blue fixed z-50">
+    <div className="navbar">
       <div className="navbar-start ">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -64,7 +64,7 @@ const Navbar = () => {
         </div>
         <Link
           to="/"
-          className="text-white cursor-pointer text-3xl font-extrabold ml-2"
+          className="text-red-500 cursor-pointer text-3xl font-extrabold ml-2"
         >
           ProTrack
         </Link>

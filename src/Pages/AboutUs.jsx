@@ -1,9 +1,11 @@
 import team from "../../src/images/Pro-Track Team.jpg";
 import process from "../../src/images/Process.jpg";
+import Navbar from "../Components/Shared/Navbar";
 
 const AboutUs = () => {
   return (
     <div>
+      <Navbar/>
       <div>
         <h1 className="text-3xl text-cyan-700 font-bold text-center m-24">
           About US
