@@ -17,7 +17,7 @@ const DashboardHome = () => {
             Open drawer
           </label>
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side ">
           <label for="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
@@ -27,6 +27,7 @@ const DashboardHome = () => {
             <li>
               <Link to="/dashboard/projects">Projects</Link>
             </li>
+        
             <li>
               <Link to="/dashboard/tasks">My Tasks</Link>
             </li>
