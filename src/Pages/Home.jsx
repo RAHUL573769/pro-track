@@ -5,22 +5,24 @@ import Objective from "../Components/Home/Objective";
 import ProUser from "../Components/Home/ProUser";
 import Service from "../Components/Home/Service";
 import Summery from "../Components/Home/Summery";
+import Testimonials from "../Components/Home/Testimonials";
 import Txt from "../Components/Home/Txt";
 import UserIcon from "../Components/Home/UserIcon";
 
 const Home = () => {
   return (
-    <div className="bg-slate-300">
+    <div>
       <Hero />
       <Txt></Txt>
       <Introduction></Introduction>
       <Service></Service>
-      
       <UserIcon></UserIcon>
-      <Summery></Summery>
-      <FeaturesSection></FeaturesSection>
+ 
+      
+      <Summery/>
       <ProUser></ProUser>
       <Objective></Objective>
+      <Testimonials/>
     </div>
   );
 };

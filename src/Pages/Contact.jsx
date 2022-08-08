@@ -1,8 +1,11 @@
+import Navbar from "../Components/Shared/Navbar";
 import image from "../images/contact.png";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen grid lg:grid-cols-2 sm:grid-cols-1 m-5">
+   <div>
+    <Navbar/>
+     <div className="min-h-screen grid lg:grid-cols-2 sm:grid-cols-1 m-5">
       <div>
         <img src={image} alt="" />
       </div>
@@ -59,6 +62,7 @@ const Contact = () => {
         </form>
       </div>
     </div>
+   </div>
   );
 };
 

@@ -10,6 +10,8 @@ import zoom from '../../Assets/images/Zoom.png'
 import ntt from '../../Assets/images/ntt.png'
 import uptick from '../../Assets/images/UpTick.png'
 import tieto from '../../Assets/images/tieto.png'
+import compass from '../../Assets/images/Compass.png'
+import tyboon from '../../Assets/images/Tyboon.png'
 
 const ProUser = () => {
     return (
@@ -33,7 +35,7 @@ const ProUser = () => {
             <img src={coin} width="120" height="80" alt="Natural" />
             <img src={ancestry} width="120" height="80" alt="Natural" />
             <img src={zoom} width="120" height="80" alt="Natural" />
-            <img src={coc} width="120" height="80" alt="Natural" /></div>
+            <img src={compass} width="120" height="60" alt="Natural" /></div>
            
         </marquee>
         <marquee class="marq"
@@ -49,9 +51,9 @@ const ProUser = () => {
             <img src={ntt} width="120" height="80" alt="Natural" />
             <img src={uptick} width="120" height="80" alt="Natural" />
             <img src={tieto} width="120" height="80" alt="Natural" />
-            <img src={ancestry} width="120" height="80" alt="Natural" />
+            <img src={tyboon} width="120" height="80" alt="Natural" />
             <img src={zoom} width="120" height="80" alt="Natural" />
-            <img src={coc} width="120" height="80" alt="Natural" />
+            <img src={ebay} width="120" height="80" alt="Natural" />
             </div>
         </marquee>
     </div>
