@@ -28,8 +28,8 @@ const Issues = () => {
           <h1>Name of Department</h1>
           <input type="text" name="" id="" placeholder="Enter Department" />
           <br />
-          <input type="submit" value="Submit" />
         </form>
+        <button className="btn btn-primary my-4">Submit</button>
       </div>
     </div>
   );
