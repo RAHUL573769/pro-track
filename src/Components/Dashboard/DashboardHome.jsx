@@ -40,6 +40,12 @@ const DashboardHome = () => {
             <li>
               <Link to="/dashboard/issues">Issues</Link>
             </li>
+            <li>
+              <Link to="/dashboard/feedbacks">Feedbacks</Link>
+            </li>
+            <li>
+              <Link to="/dashboard/files">Company's Files</Link>
+            </li>
             {/* <li>
               <Link>Tasks</Link>
             </li> */}
