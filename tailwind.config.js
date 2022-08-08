@@ -4,12 +4,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'navyBlue': '#03045E',
+        'navyBlue': '#1e517b',
         'blue': '#0077B6',
         'skyBlue': '#00B4D8',
         'seaBlue': '#90E0EF',
         'aqua':'#CAF0F8',
-        'cream': '#ffe9f0'
+        'cream': '#fdf6f1'
       },
     }
   },
