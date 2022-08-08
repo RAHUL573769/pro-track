@@ -15,8 +15,8 @@ import Login from "./Pages/Login";
 function App() {
   return (
     <div>
-      <Navbar />
-      <div className="pt-20">
+      
+      <div>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<AboutUs />} />
