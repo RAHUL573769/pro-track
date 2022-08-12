@@ -107,8 +107,9 @@ const AddProjectModal = () => {
                         />
 
                     </form>
-                    <div class="modal-action">
-                        <label for="my-modal" class="btn">Yay!</label>
+                    <div class="modal-action flex justify-between">
+                        <label for="my-modal" class="btn">Cancel</label>
+                        <label for="create-project" typeof='submit' class="btn">Submit</label>
                     </div>
                 </div>
             </div>
