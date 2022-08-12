@@ -8,8 +8,12 @@ const DashboardHome = () => {
       <div className="drawer drawer-mobile">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
+<<<<<<< HEAD
+
+=======
           {/* <!-- Page content here --> */}
           <Navbar/>
+>>>>>>> ddf995b86d30b49396f605c6644dcb3b6f006c7d
           <Outlet />
           <label
             for="my-drawer-2"
