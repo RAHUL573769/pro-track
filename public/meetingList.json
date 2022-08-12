@@ -1,0 +1,42 @@
+[
+    {
+        "id": 0,
+        "meetingType": "Morning Scrum",
+        "time": "11:20 am",
+        "date": "5-7-2022",
+        "projectName": "Issue Track",
+        "meetingLink": "https://meet.google.com/sgm-kdjr-idc"
+    },
+    {
+        "id": 1,
+        "meetingType": "Evening Scrum",
+        "time": "5:30 pm",
+        "date": "1-8-2022",
+        "projectName": "Issue Track",
+        "meetingLink": "https://meet.google.com/sgm-xbiv-oks"
+    },
+    {
+        "id": 2,
+        "meetingType": "Night Scrum",
+        "time": "9:10 pm",
+        "date": "2-8-2022",
+        "projectName": "Issue Track",
+        "meetingLink": "https://meet.google.com/uix-dfed-idc"
+    },
+    {
+        "id": 3,
+        "meetingType": "Evening Scrum",
+        "time": "6:00 pm",
+        "date": "9-8-2022",
+        "projectName": "Issue Track",
+        "meetingLink": "https://meet.google.com/iko-rsdj-idc"
+    },
+    {
+        "id": 4,
+        "meetingType": "Morning Scrum",
+        "time": "9:30 am",
+        "date": "1-5-2022",
+        "projectName": "Issue Track",
+        "meetingLink": "https://meet.google.com/sgm-iike-pli"
+    }
+]

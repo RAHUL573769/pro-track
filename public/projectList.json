@@ -1,42 +1,47 @@
 [
-    {
-      "id": 0,
-      "ownerName": "Jenifer Lee",
-      "projectName": "DOGNOSIS",
-      "startDate": "5/7/2022",
-      "endDate": "9/7/2022",
-      "task": 10
-    },
-    {
-      "id": 1,
-      "ownerName": "Jennifer Kinney",
-      "projectName": "FRANSCENE",
-      "startDate": "1/8/2022",
-      "endDate": "5/8/2022",
-      "task": 10
-    },
-    {
-      "id": 2,
-      "ownerName": "Angelina Price",
-      "projectName": "EQUITOX",
-      "startDate": "2/8/2022",
-      "endDate": "7/8/2022",
-      "task": 10
-    },
-    {
-      "id": 3,
-      "ownerName": "Kristie Shields",
-      "projectName": "GENEKOM",
-      "startDate": "9/8/2022",
-      "endDate": "15/8/2022",
-      "task": 10
-    },
-    {
-      "id": 4,
-      "ownerName": "Mandy Sanchez",
-      "projectName": "INQUALA",
-      "startDate": "10/8/2022",
-      "endDate": "19/8/2022",
-      "task": 10
-    }
-  ]
+  {
+    "id": 0,
+    "ownerName": "Jenifer Lee",
+    "projectName": "DOGNOSIS",
+    "startDate": "5/7/2022",
+    "endDate": "9/7/2022",
+    "task": 10,
+    "email": "test@test.com"
+  },
+  {
+    "id": 1,
+    "ownerName": "Jennifer Kinney",
+    "projectName": "FRANSCENE",
+    "startDate": "1/8/2022",
+    "endDate": "5/8/2022",
+    "task": 10,
+    "email": "test@test.com"
+  },
+  {
+    "id": 2,
+    "ownerName": "Angelina Price",
+    "projectName": "EQUITOX",
+    "startDate": "2/8/2022",
+    "endDate": "7/8/2022",
+    "task": 10,
+    "email": "test@test.com"
+  },
+  {
+    "id": 3,
+    "ownerName": "Kristie Shields",
+    "projectName": "GENEKOM",
+    "startDate": "9/8/2022",
+    "endDate": "15/8/2022",
+    "task": 10,
+    "email": "test@test.com"
+  },
+  {
+    "id": 4,
+    "ownerName": "Mandy Sanchez",
+    "projectName": "INQUALA",
+    "startDate": "10/8/2022",
+    "endDate": "19/8/2022",
+    "task": 10,
+    "email": "test@test.com"
+  }
+]
