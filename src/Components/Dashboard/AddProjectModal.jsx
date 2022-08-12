@@ -8,7 +8,7 @@ const AddProjectModal = () => {
         console.log(data)
     }
     return (
-        <div >
+        <div className='grid justify-content-center'>
             {/* <!-- The button to open modal --> */}
             <label for="my-modal" class="btn modal-button">open modal</label>
 
@@ -16,7 +16,7 @@ const AddProjectModal = () => {
             <input type="checkbox" id="my-modal" class="modal-toggle" />
             <div class="modal">
                 <div class="modal-box">
-                    <form action="">
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <label htmlFor="company-website" className="block text-sm font-medium text-gray-700">
                             Project Name:
                         </label>
@@ -107,8 +107,9 @@ const AddProjectModal = () => {
                         />
 
                     </form>
-                    <div class="modal-action">
-                        <label for="my-modal" class="btn">Yay!</label>
+                    <div class="modal-action flex justify-between">
+                        <label for="my-modal" class="btn">Cancel</label>
+                        <label for="create-project" typeof='submit' class="btn">Submit</label>
                     </div>
                 </div>
             </div>
