@@ -6,11 +6,10 @@ const Projects = () => {
   const [allProjects, setAllProjects] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/projectList.json')
+    fetch(`https://protrackbd.herokuapp.com/projects`)
       .then(res => res.json())
       .then(data => setAllProjects(data))
   }, [])
-
 
   return (
     <section className="p-10">

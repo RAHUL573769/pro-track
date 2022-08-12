@@ -4,9 +4,24 @@ import { useForm } from 'react-hook-form';
 
 const AddProjectModal = () => {
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data)
+
+        const url = `https://protrackbd.herokuapp.com/projects`;
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'content-type': 'application/json',
+            },
+   
+        })
+        .then(res=>res.json())
+            .then(result => {
+            console.log(result);
+            reset();
+        })
+        
     }
     return (
         <div>

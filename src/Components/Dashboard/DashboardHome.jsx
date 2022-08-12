@@ -9,7 +9,9 @@ const DashboardHome = () => {
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           {/* <!-- Page content here --> */}
+          <div className="bg-seaBlue">
           <Navbar/>
+          </div>
           <Outlet />
           <label
             for="my-drawer-2"
