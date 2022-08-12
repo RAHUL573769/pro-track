@@ -20,11 +20,11 @@ import Login from "./Pages/Login";
 function App() {
   return (
     <div>
-      
       <div>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/dashboard" element={<DashboardHome></DashboardHome>}>
             <Route index element={<DashWelcome></DashWelcome>}></Route>
