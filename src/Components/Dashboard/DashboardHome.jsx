@@ -1,14 +1,15 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import Navbar from "../Shared/Navbar";
 
 const DashboardHome = () => {
   return (
-    <div>
+    <div className="flex">
       <div className="drawer drawer-mobile">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           {/* <!-- Page content here --> */}
-
+          <Navbar/>
           <Outlet />
           <label
             for="my-drawer-2"

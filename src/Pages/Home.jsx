@@ -17,11 +17,10 @@ const Home = () => {
       <Introduction></Introduction>
       <Service></Service>
       <UserIcon></UserIcon>
- 
       
       <Summery/>
       <ProUser></ProUser>
-      <Objective></Objective>
+      {/* <Objective></Objective> */}
       <Testimonials/>
     </div>
   );
