@@ -1,52 +1,232 @@
 import React from "react";
-
+import {CgProfile } from 'react-icons/cg';
 const MyTasks = () => {
   return (
     <div>
-      <div class=" text-center mb-5">
-        <table class="table-fixed w-full  ">
+      <h2 className="text-4xl font-bold text-center">My Tasks</h2>
+    <table class="table-fixed w-full border-collapse">
+    
+      <thead>
+      <tr className='bg-navyBlue text-white text-xl'>
+          <th className="py-3 w-16">
+            <label>
+              <input type="checkbox" class=" bg-white checkbox" />
+            </label>
+           
+          </th>
+         
+      <th className="w-16 p-3 "> <CgProfile></CgProfile></th>
+          <th>Task</th>
+          <th>Owner</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Deadline</th>
+         
+        </tr>
+      </thead>
+      <tbody className="">
+        
+      <tr>
+      <th className="py-3 ">
+       <label>
+              <input type="checkbox" class="checkbox" />
+            </label>
+       </th>
+       <th  >
+       <div class="avatar mr-3">
+  <div class="w-10 rounded-full">
+    <img src="https://placeimg.com/192/192/people" />
+  </div>
+  </div>
+       </th>
+       <td className="border-4"></td>
+       <td className="border-4">
+       </td>
+       <td>
+       <select class="select select-white w-full max-w-xs bg-blue  text-white font-bold">
+  <option>High </option>
+  <option>Medium</option>
+  <option>Low</option>
+</select>
+  </td>
+      <td>
+       <select class="select select-white w-full max-w-xs bg-blue  text-white font-bold">
+        <option>Pending</option>
+        <option>Progress</option>
+        <option>Complete</option>
+</select>
+  </td>
+       <th className="border-4"></th>
+      </tr>
 
-          <thead>
-            <tr className='bg-rose-400 text-white text-xl'>
-              <th>Completed</th>
-              <th className='p-6'>#</th>
-              <th>Task</th>
-              <th>Assigned by</th>
-              <th>Status </th>
-              <th>Priority</th>
-            </tr>
-          </thead>
-          <tbody className='border-2 border-collapse-'>
 
-            <tr className='bg-base-200'>
-              <th className="bg-rose-300"> <input type="checkbox" name="" id="" /> </th>
-              <th className=' '>1</th>
-              <td>Front end ready</td>
-              <td tabindex="0" className="border-4 btn m-1 p-3 dropdown dropdown-hover"> hover
-              <select name="" id="" className="bg-base-200">
-                  <option value="">-</option>
-                  <option value="">Pending</option>
-                  <option value="">In progress</option>
-                  <option value="">Completed</option>
-                </select>
-              </td>
-              <td>
-                <select name="" id="" className="bg-base-200">
-                  <option value="">-</option>
-                  <option value="">Pending</option>
-                  <option value="">In progress</option>
-                  <option value="">Completed</option>
-                </select>
-              </td>
-              <td>High</td>
-              <td>2/8/22</td>
-              <td>6/8/22</td>
-            </tr>
+      <tr>
+      <th className="py-3 ">
+       <label>
+              <input type="checkbox" class="checkbox" />
+            </label>
+       </th>
+       <th  >
+       <div class="avatar mr-3">
+  <div class="w-10 rounded-full">
+    <img src="https://placeimg.com/192/192/people" />
+  </div>
+  </div>
+       </th>
+       <td className="border-4"></td>
+       <td className="border-4">
+       </td>
+       <td>
+       <select class="select select-white w-full max-w-xs bg-blue  text-white font-bold">
+  <option>High </option>
+  <option>Medium</option>
+  <option>Low</option>
+</select>
+  </td>
+      <td>
+       <select class="select select-white w-full max-w-xs bg-blue  text-white font-bold">
+        <option>Pending</option>
+        <option>Progress</option>
+        <option>Complete</option>
+</select>
+  </td>
+       <th className="border-4"></th>
+      </tr>
 
-          </tbody>
-        </table>
-      </div>
-    </div>
+      <tr>
+      <th className="py-3 ">
+       <label>
+              <input type="checkbox" class="checkbox" />
+            </label>
+       </th>
+       <th  >
+       <div class="avatar mr-3">
+  <div class="w-10 rounded-full">
+    <img src="https://placeimg.com/192/192/people" />
+  </div>
+  </div>
+       </th>
+       <td className="border-4"></td>
+       <td className="border-4">
+       </td>
+       <td>
+       <select class="select select-white w-full max-w-xs bg-blue  text-white font-bold">
+  <option>High </option>
+  <option>Medium</option>
+  <option>Low</option>
+</select>
+  </td>
+      <td>
+       <select class="select select-white w-full max-w-xs bg-blue  text-white font-bold">
+        <option>Pending</option>
+        <option>Progress</option>
+        <option>Complete</option>
+</select>
+  </td>
+       <th className="border-4"></th>
+      </tr>
+
+      <tr>
+      <th className="py-3 ">
+       <label>
+              <input type="checkbox" class="checkbox" />
+            </label>
+       </th>
+       <th  >
+       <div class="avatar mr-3">
+  <div class="w-10 rounded-full">
+    <img src="https://placeimg.com/192/192/people" />
+  </div>
+  </div>
+       </th>
+       <td className="border-4"></td>
+       <td className="border-4">
+       </td>
+       <td>
+       <select class="select select-white w-full max-w-xs bg-blue  text-white font-bold">
+  <option>High </option>
+  <option>Medium</option>
+  <option>Low</option>
+</select>
+  </td>
+      <td>
+       <select class="select select-white w-full max-w-xs bg-blue  text-white font-bold">
+        <option>Pending</option>
+        <option>Progress</option>
+        <option>Complete</option>
+</select>
+  </td>
+       <th className="border-4"></th>
+      </tr>
+
+      <tr>
+      <th className="py-3 ">
+       <label>
+              <input type="checkbox" class="checkbox" />
+            </label>
+       </th>
+       <th  >
+       <div class="avatar mr-3">
+  <div class="w-10 rounded-full">
+    <img src="https://placeimg.com/192/192/people" />
+  </div>
+  </div>
+       </th>
+       <td className="border-4"></td>
+       <td className="border-4">
+       </td>
+       <td>
+       <select class="select select-white w-full max-w-xs bg-blue  text-white font-bold">
+  <option>High </option>
+  <option>Medium</option>
+  <option>Low</option>
+</select>
+  </td>
+      <td>
+       <select class="select select-white w-full max-w-xs bg-blue  text-white font-bold">
+        <option>Pending</option>
+        <option>Progress</option>
+        <option>Complete</option>
+</select>
+  </td>
+       <th className="border-4"></th>
+      </tr>
+
+      <tr>
+      <th className="py-3 ">
+       <label>
+              <input type="checkbox" class="checkbox" />
+            </label>
+       </th>
+       <th  >
+       <div class="avatar mr-3">
+  <div class="w-10 rounded-full">
+    <img src="https://placeimg.com/192/192/people" />
+  </div>
+  </div>
+       </th>
+       <td className="border-4"></td>
+       <td className="border-4">
+       </td>
+       <td>
+       <select class="select select-white w-full max-w-xs bg-blue  text-white font-bold">
+  <option>High </option>
+  <option>Medium</option>
+  <option>Low</option>
+</select>
+  </td>
+      <td>
+       <select class="select select-white w-full max-w-xs bg-blue  text-white font-bold">
+        <option>Pending</option>
+        <option>Progress</option>
+        <option>Complete</option>
+</select>
+  </td>
+       <th className="border-4"></th>
+      </tr>
+      </tbody>
+      </table>
+  </div>
   );
 };
 
