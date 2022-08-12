@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 const Meetings = () => {
+  const [meetings, setMeetings] = useState([]);
+
+  useEffect(() => {
+    fetch('https://protrackbd.herokuapp.com/meeting')
+      .then(res => res.json())
+      .then(data => setMeetings(data))
+  }, [])
 
   const { register, formState: { errors }, handleSubmit } = useForm();
 
@@ -84,36 +91,41 @@ const Meetings = () => {
 
       {/* Show all the meetings details here in table  */}
 
-      <div className="mt-24">
-        <div class="overflow-x-auto">
-          <table class="table w-full">
+      {
+        meetings.map((meeting, index) =>
 
-            <thead>
-              <tr>
-                <th></th>
-                <th>Meeting Type</th>
-                <th>Time</th>
-                <th>Date</th>
-                <th>Project</th>
-                <th>Meeting Link</th>
-              </tr>
-            </thead>
-            <tbody>
+          <div className="mt-24">
+            <div class="overflow-x-auto">
+              <table class="table w-full">
 
-              <tr>
-                <th>1</th>
-                <td>Morning Update</td>
-                <td>11:00 am</td>
-                <td>01-01-22</td>
-                <td>Web Server</td>
-                <td>https://meet.google.com/qth-zvoa-vxq</td>
-              </tr>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Meeting Type</th>
+                    <th>Time</th>
+                    <th>Date</th>
+                    <th>Project</th>
+                    <th>Meeting Link</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <th>{index + 1}</th>
+                    <td>{meeting.meetingType}</td>
+                    <td>{meeting.time}</td>
+                    <td>{meeting.date}</td>
+                    <td>{meeting.projectName}</td>
+                    <td>{meeting.meetingLink}</td>
+                  </tr>
 
 
-            </tbody>
-          </table>
-        </div>
-      </div>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )
+      }
 
     </div>
   );
