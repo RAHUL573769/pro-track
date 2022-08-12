@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { GrAdd } from 'react-icons/gr';
 import { useForm } from 'react-hook-form';
 
 const AddProjectModal = () => {
+
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
