@@ -1,0 +1,36 @@
+.card-container {
+    position: relative;
+}
+
+.wrapper {
+    z-index: -111;
+}
+
+.contentTitle::before {
+    content: "";
+    position: absolute;
+    border-right: 10px solid #303d3d;
+    border-top: 10px solid #ff000000;
+    top: -0px;
+    left: -10px;
+}
+.contentTitle::after {
+    content: "";
+    position: absolute;
+    border-left: 10px solid #303d3d;
+    border-top: 10px solid #ff000000;
+    top: -0px;
+    right: -10px;
+}
+
+.contentTitle {
+    position: absolute;
+    left: 45%;
+    top: -10px;
+    z-index: 1111;
+}
+.content-btn{
+    position: absolute;
+    bottom:-45px;
+    right: 45%;
+}
