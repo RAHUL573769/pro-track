@@ -5,7 +5,9 @@ import Navbar from "../Components/Shared/Navbar";
 const AboutUs = () => {
   return (
     <div>
-      <Navbar/>
+      <div className="bg-blue">
+          <Navbar/>
+          </div>
       <div>
         <h1 className="text-3xl text-cyan-700 font-bold text-center m-24">
           About US
