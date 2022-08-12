@@ -1,7 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GrAdd } from 'react-icons/gr'
 import AddProjectModal from "./AddProjectModal";
 const Projects = () => {
+
+  const [allProjects, setAllProjects] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/projectList.json')
+      .then(res => res.json())
+      .then(data => setAllProjects(data))
+  }, [])
+
+
   return (
     <section className="p-10">
       <div className="flex justify-between">
@@ -9,79 +19,24 @@ const Projects = () => {
         <AddProjectModal />
       </div>
       <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-6 justify-items-center overscroll-y-none">
-        <div class="card lg:max-w-lg bg-seaBlue border-l-8 border-blue text-primary-content cursor-pointer shadow-xl transform transition duration-500 hover:scale-110 ">
-          <div class="card-body">
-            <h2 class="card-title">Project title</h2>
-            <p><small className="font-semibold">Owner: Mark don</small></p>
-            <div className="flex justify-between font-semibold">
-              <p><small>Start date: 9/8/2022</small></p>
-              <p><small>End date:12/8/2022</small></p>
-            </div>
-            <p>Tasks: 7</p>
-          </div>
-        </div>
+        {
+          allProjects.map(project =>
 
-        <div class="card lg:max-w-lg bg-seaBlue border-l-8 border-blue text-primary-content cursor-pointer shadow-xl transform transition duration-500 hover:scale-110 ">
-          <div class="card-body">
-            <h2 class="card-title">Project title</h2>
-            <p><small className="font-semibold">Owner: Mark don</small></p>
-            <div className="flex justify-between font-semibold">
-              <p><small>Start date: 9/8/2022</small></p>
-              <p><small>End date:12/8/2022</small></p>
+            <div class="card lg:max-w-lg bg-seaBlue border-l-8 border-blue text-primary-content cursor-pointer shadow-xl transform transition duration-500 hover:scale-110 ">
+              <div class="card-body">
+                <h2 class="card-title">{project.projectName}</h2>
+                <p><small className="font-semibold">{project.ownerName}</small></p>
+                <div className="flex justify-between font-semibold">
+                  <p><small>Start date: {project.startDate}</small></p>
+                  <p><small>End date: {project.endDate}</small></p>
+                </div>
+                <p>Tasks: {project.task}</p>
+              </div>
             </div>
-            <p>Tasks: 7</p>
-          </div>
-        </div>
-
-        <div class="card lg:max-w-lg bg-seaBlue border-l-8 border-blue text-primary-content cursor-pointer shadow-xl transform transition duration-500 hover:scale-110 ">
-          <div class="card-body">
-            <h2 class="card-title">Project title</h2>
-            <p><small className="font-semibold">Owner: Mark don</small></p>
-            <div className="flex justify-between font-semibold">
-              <p><small>Start date: 9/8/2022</small></p>
-              <p><small>End date:12/8/2022</small></p>
-            </div>
-            <p>Tasks: 7</p>
-          </div>
-        </div>
-
-        <div class="card lg:max-w-lg bg-seaBlue border-l-8 border-blue text-primary-content cursor-pointer shadow-xl transform transition duration-500 hover:scale-110 ">
-          <div class="card-body">
-            <h2 class="card-title">Project title</h2>
-            <p><small className="font-semibold">Owner: Mark don</small></p>
-            <div className="flex justify-between font-semibold">
-              <p><small>Start date: 9/8/2022</small></p>
-              <p><small>End date:12/8/2022</small></p>
-            </div>
-            <p>Tasks: 7</p>
-          </div>
-        </div>
-
-        <div class="card lg:max-w-lg bg-seaBlue border-l-8 border-blue text-primary-content cursor-pointer shadow-xl transform transition duration-500 hover:scale-110 ">
-          <div class="card-body">
-            <h2 class="card-title">Project title</h2>
-            <p><small className="font-semibold">Owner: Mark don</small></p>
-            <div className="flex justify-between font-semibold">
-              <p><small>Start date: 9/8/2022</small></p>
-              <p><small>End date:12/8/2022</small></p>
-            </div>
-            <p>Tasks: 7</p>
-          </div>
-        </div>
-
-        <div class="card lg:max-w-lg bg-seaBlue border-l-8 border-blue text-primary-content cursor-pointer shadow-xl transform transition duration-500 hover:scale-110 ">
-          <div class="card-body">
-            <h2 class="card-title">Project title</h2>
-            <p><small className="font-semibold">Owner: Mark don</small></p>
-            <div className="flex justify-between font-semibold">
-              <p><small>Start date: 9/8/2022</small></p>
-              <p><small>End date:12/8/2022</small></p>
-            </div>
-            <p>Tasks: 7</p>
-          </div>
-        </div>
+          )
+        }
       </div>
-      
+
     </section>
   );
 };
