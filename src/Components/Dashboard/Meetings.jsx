@@ -16,6 +16,29 @@ const Meetings = () => {
       <div>
         <h1 className="text-3xl text-cyan-700 text-center m-10 font-bold">Meetings</h1>
 
+
+        {/* <div>
+
+          <div className="text-center">
+            <label for="my-modal" class="btn modal-button">Add new meeting</label>
+          </div>
+
+          <input type="checkbox" id="my-modal" class="modal-toggle" />
+          <div class="modal">
+            <div class="modal-box">
+              <form className='grid grid-cols-1 gap-3 justify-items-center mt-2'>
+                <h1 className="text-xl text-red-700 font-semibold text-center">Add meeting for the project</h1>
+                <input type="text" placeholder="Meeting Type" className="input input-bordered w-full max-w-xs" />
+                <input type="time" placeholder="Meeting Time" className="input input-bordered w-full max-w-xs" />
+                <input type="date" placeholder="Meeting Date" className="input input-bordered w-full max-w-xs" />
+                <input type="text" placeholder="Pick Project" className="input input-bordered w-full max-w-xs" />
+                <input type="text" placeholder="Meeting Link" className="input input-bordered w-full max-w-xs" />
+                <input type="submit" value="Add" className="btn btn-secondary w-full max-w-xs" />
+              </form>
+            </div>
+          </div>
+        </div> */}
+
         <div>
           <h1 className="text-3xl text-cyan-500 m-10">Add New Meeting</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
