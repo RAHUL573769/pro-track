@@ -8,16 +8,21 @@ const AddProjectModal = () => {
         console.log(data)
     }
     return (
-        <div className='grid justify-content-center'>
+        <div>
             {/* <!-- The button to open modal --> */}
             <label for="my-modal" class="btn btn-success font-bold mb-3"><GrAdd className="mr-2"></GrAdd>Create Project</label>
 
             {/* <!-- Put this part before </body> tag --> */}
             <input type="checkbox" id="my-modal" class="modal-toggle" />
             <div class="modal">
-                <div class="modal-box">
+                <div class="modal-box border-double border-8 border-emerald-500">
+
+                <div>
+                    <h3 class="font-bold text-lg text-center p-2 rounded-lg bg-seaBlue text-white">Hello user! Create Your project here.</h3>
+                </div>
+
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <label htmlFor="company-website" className="block text-sm font-medium text-gray-700">
+                        <label htmlFor="company-website" className="block text-sm mt-5 mb-3 font-medium text-gray-700">
                             Project Name:
                         </label>
 
@@ -30,7 +35,7 @@ const AddProjectModal = () => {
                             {...register("project-title")}
                         />
 
-                        <label htmlFor="about" className="block text-sm font-medium text-gray-700">
+                        <label htmlFor="about" className="block mt-5 mb-3  text-sm font-medium text-gray-700">
                             Description
                         </label>
 
@@ -43,72 +48,57 @@ const AddProjectModal = () => {
                             defaultValue={''}
                             {...register("about")}
                         />
-                        <label htmlFor="owner" className='"block text-sm font-medium text-gray-700'>Owner Name:</label>
+                        <label htmlFor="owner" className='inline-block mt-5 text-sm font-medium text-gray-700'>Owner Name :</label>
 
                         <input
                             type="text"
                             name="owner"
                             id="owner"
                             placeholder='Mark Don'
-                            className="border-solid border-2 border-base-200 w-56 "
+                            className="border-solid border-2 ml-2 border-base-200 w-56 "
                             {...register("owner")}
                         />
 
-                        <div className='flex'>
+                        <div className='flex mt-5'>
                             <div>
-                                <label htmlFor="start" className='"block text-sm font-medium text-gray-700'>Starting Date:</label>
+                                <label htmlFor="start" className='text-sm font-medium text-gray-700'>Starting Date:</label>
 
                                 <input
                                     type="date"
                                     name="start-date"
                                     id="start"
-                                    className="border-solid border-2 border-base-200 w-56 "
+                                    className="border-solid border-2 border-base-200 w-48"
                                     {...register("start-date")}
                                 />
 
                             </div>
 
                             <div>
-                                <label htmlFor="end" className='"block text-sm font-medium text-gray-700'>Ending Date:</label>
+                                <label htmlFor="end" className='text-sm font-medium text-gray-700'>Ending Date:</label>
 
                                 <input
                                     type="date"
                                     name="end-date"
                                     id="end"
-                                    className="border-solid border-2 border-base-200 w-56 "
+                                    className="border-solid border-2 border-base-200 w-48"
                                     {...register("end-date")}
                                 />
                             </div>
                         </div>
 
-                        <label htmlFor="owner" className='"block text-sm font-medium text-gray-700'>Team Name:</label>
+                        <label htmlFor="owner" className='inline-block text-sm mt-5 font-medium text-gray-700'>Team Name :</label>
 
                         <input
                             type="text"
                             name="team"
                             id="team"
                             placeholder='Mark Don'
-                            className="border-solid border-2 border-base-200 w-56 "
+                            className="border-solid border-2 ml-2 border-base-200 w-56 "
                             {...register("team")}
                         />
-
-                        <label htmlFor="about" className="block text-sm font-medium text-gray-700">
-                            Add members
-                        </label>
-
-                        <textarea
-                            id="members"
-                            name="members"
-                            rows={3}
-                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
-                            placeholder="you@example.com"
-                            defaultValue={''}
-                            {...register("members")}
-                        />
-
                         <div class="modal-action flex justify-between">
-                            <label for="my-modal" class="btn">Cancel</label>
-                            <input type="submit" value='submit' className='btn'/>
+                            <label for="my-modal" class="btn btn-info btn-sm">Cancel</label>
+                            <input type="submit" value='submit' className='btn btn-success btn-sm'/>
                         </div>
 
                     </form>
