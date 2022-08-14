@@ -76,46 +76,6 @@ const Meetings = () => {
           </div>
         </div>
 
-        {/* <div>
-          <h1 className="text-3xl text-cyan-500 m-10">Add New Meeting</h1>
-          <form onSubmit={handleSubmit(onSubmit)}>
-
-            <div className="form-control w-full ">
-              <label className="label">
-                <span className="label-text">Meeting Type</span>
-              </label>
-              <input type="text" placeholder="Write the type of meeting" className="input input-bordered w-full " {...register("meetingtype", { required: true })} />
-            </div>
-            <div className="form-control w-full ">
-              <label className="label">
-                <span className="label-text">Time</span>
-              </label>
-              <input type="time" placeholder="Meeting time" className="input input-bordered w-full " {...register("meetingtime", { required: true })} />
-            </div>
-            <div className="form-control w-full ">
-              <label className="label">
-                <span className="label-text">Date</span>
-              </label>
-              <input type="date" placeholder="Meeting Date" className="input input-bordered w-full " {...register("meetingdate", { required: true })} />
-            </div>
-            <div className="form-control w-full ">
-              <label className="label">
-                <span className="label-text">Project Name</span>
-              </label>
-              <input type="text" placeholder="Select the Project" className="input input-bordered w-full " {...register("project", { required: true })} />
-            </div>
-            <div className="form-control w-full ">
-              <label className="label">
-                <span className="label-text">Meeting Link</span>
-              </label>
-              <input type="text" placeholder="Put the meeting link here" className="input input-bordered w-full " {...register("meetingLink", { required: true })} />
-            </div>
-
-            <input className="btn btn-outline w-full  mt-4" type="submit" value="Add Meeting" />
-
-          </form>
-
-        </div> */}
       </div>
 
 
