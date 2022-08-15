@@ -18,7 +18,7 @@ const Introduction = () => {
             Make Your Task More Easy With{" "}
             <span className="text-blue">ProTrack</span>
           </h1>
-          <p className="text-base my-5 text-slate-600 tracking-widest">
+          <p className="text-base my-5 text-paragraph tracking-widest">
             Protrack is a web and mobile Task management platform designed to
             help teams organize, track, and manage their task and also helps
             teams move work forward. Collaborate, manage projects, and reach new

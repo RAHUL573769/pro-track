@@ -23,7 +23,7 @@ import ama from '../../Assets/images/Amazon.png'
 const ProUser = () => {
     return (
         <div className='mt-20'>
-            <h2 className='text-5xl font-bold text-center'>
+            <h2 className='text-5xl font-bold text-center text-header'>
                 More that 15000 Users Use Pro-Track to simplify their Task
             </h2>
 
