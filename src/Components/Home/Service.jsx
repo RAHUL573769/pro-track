@@ -10,7 +10,7 @@ import { GiTimeBomb} from 'react-icons/gi';
 const Service = () => {
     return (
         <div className='mt-10'>
-           <h2 className='text-4xl font-bold text-center'>Using Protrack you can Manage and Maintain</h2>
+           <h2 className='text-4xl font-bold text-center text-header'>Using Protrack you can Manage and Maintain</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-7 mx-16  mt-10">
         <div className="card max-w-lg bg-[#f6efe9]  shadow-xl transform transition duration-500 hover:scale-110 ">
             
@@ -18,7 +18,7 @@ const Service = () => {
                 <AiFillAppstore></AiFillAppstore> 
                 </figure>
                 <div className="card-body items-center text-center ">
-                  <h2 className="text-3xl font-bold"> App Development</h2>
+                  <h2 className="text-3xl font-bold text-header"> App Development</h2>
                   <p>
                     
                   </p>
@@ -32,7 +32,7 @@ const Service = () => {
                 <MdWebAsset></MdWebAsset>
                 </figure>
                 <div className="card-body items-center text-center ">
-                  <h2 className="text-3xl font-bold">Asset Development</h2>
+                  <h2 className="text-3xl font-bold text-header">Asset Development</h2>
                   <p>
                     
                   </p>
@@ -46,7 +46,7 @@ const Service = () => {
                  <SiMarketo></SiMarketo>
                 </figure>
                 <div className="card-body items-center text-center ">
-                  <h2 className="text-3xl font-bold">Marketing</h2>
+                  <h2 className="text-3xl font-bold text-header">Marketing</h2>
                   <p>
                     
                   </p>
@@ -61,7 +61,7 @@ const Service = () => {
                 <HiInformationCircle></HiInformationCircle>
                 </figure>
                 <div className="card-body items-center text-center ">
-                  <h2 className="text-3xl font-bold">Information Purpose</h2>
+                  <h2 className="text-3xl font-bold text-header">Information Purpose</h2>
                   <p>
                     
                   </p>
@@ -76,7 +76,7 @@ const Service = () => {
                  <SiMicrosoftteams></SiMicrosoftteams>
                 </figure>
                 <div className="card-body items-center text-center ">
-                  <h2 className="text-3xl font-bold">Team Collaboration</h2>
+                  <h2 className="text-3xl font-bold text-header">Team Collaboration</h2>
                   <p>
                     
                   </p>
@@ -91,7 +91,7 @@ const Service = () => {
                <GiTimeBomb></GiTimeBomb>
                 </figure>
                 <div className="card-body items-center text-center ">
-                  <h2 className="text-3xl font-bold">Tracking Time</h2>
+                  <h2 className="text-3xl font-bold text-header">Tracking Time</h2>
                   <p>
                    
                   </p>
