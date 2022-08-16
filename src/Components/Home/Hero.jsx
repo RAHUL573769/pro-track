@@ -21,7 +21,6 @@ const Hero = () => {
           time it’s identified until you have resolved it.
         </p>
       </div>
-     
     </section>
   );
 };

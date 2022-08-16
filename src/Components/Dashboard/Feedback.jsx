@@ -4,7 +4,7 @@ const Feedback = () => {
   return (
     <div>
       <textarea
-        class="textarea textarea-info"
+        className="textarea textarea-info"
         placeholder="Your Feedback Here"
       ></textarea>
     </div>
