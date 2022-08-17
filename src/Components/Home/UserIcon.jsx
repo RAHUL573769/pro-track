@@ -10,7 +10,7 @@ import image9 from "../../images/skype.png";
 
 const UserIcon = () => {
   return (
-<<<<<<< HEAD
+
     <div className="hero">
       <div className='hero-content flex-col lg:flex-row-reverse bg-background lg:py-32 lg:my-20 lg:mx-16 rounded-3xl'>
       <div className='grid lg:grid-cols-6 lg:mx-20 my-32 mr-24 item-center relative'>
@@ -27,7 +27,7 @@ const UserIcon = () => {
         <h2 className='lg:mx-20 mt-2 text-center text-header text-2xl lg:text-4xl font-bold'>Connect to <span className='text-navyBlue'>Pro-track</span> with your preferred apps</h2>
       </div>
     </div>
-=======
+
     <div className="hero ">
       <div className="hero-content flex-col lg:flex-row-reverse bg-[#eaf2d7] lg:py-32 lg:my-20 lg:mx-16 rounded-3xl">
         <div className="grid lg:grid-cols-6 lg:mx-20 my-32 mr-24 item-center relative">
@@ -67,7 +67,8 @@ const UserIcon = () => {
           </h2>
         </div>
       </div>
->>>>>>> 3726102fc01fef73a5e63a87b01ef3ab2241e20c
+
+    </div>
     </div>
   );
 };
