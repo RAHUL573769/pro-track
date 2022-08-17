@@ -10,7 +10,7 @@ const DashboardHome = () => {
         <div className="drawer-content flex flex-col">
           {/* <!-- Page content here --> */}
           <div className="bg-seaBlue">
-          <Navbar/>
+            <Navbar />
           </div>
           <Outlet />
           <label
@@ -30,7 +30,7 @@ const DashboardHome = () => {
             <li>
               <Link to="/dashboard/projects">Projects</Link>
             </li>
-        
+
             <li>
               <Link to="/dashboard/tasks">My Tasks</Link>
             </li>
