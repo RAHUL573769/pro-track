@@ -103,12 +103,13 @@ const DashboardHome = () => {
                 <span class="ml-2 text-sm tracking-wide truncate">Settings</span>
               </a>
             </li>
+            <li>
+              <Link to="/dashboard/feedbacks">Feedback</Link>
+            </li>
             {/* <li>
               <Link to="/dashboard/issues">Issues</Link>
             </li>
-            <li>
-              <Link to="/dashboard/feedbacks">Feedbacks</Link>
-            </li>
+            
             <li>
               <Link to="/dashboard/files">Company's Files</Link>
             </li> */}
