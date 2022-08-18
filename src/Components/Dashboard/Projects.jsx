@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { GrAdd } from 'react-icons/gr'
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
 import AddProjectModal from "./AddProjectModal";
@@ -12,7 +11,7 @@ const Projects = () => {
   if (isLoading) {
     return <Loading />
   }
-  refetch();
+
   return (
     <section className="p-10">
       <div className="flex justify-between">
@@ -23,8 +22,26 @@ const Projects = () => {
         {
           allProjects.map(project => <Project key={project._id} project={project}></Project>)
         }
+        {allProjects.map((project) => (
+          <div className="card lg:max-w-lg bg-seaBlue border-l-8 border-blue text-primary-content cursor-pointer shadow-xl transform transition duration-500 hover:scale-110 ">
+            <div className="card-body">
+              <h2 className="card-title">{project.projectName}</h2>
+              <p>
+                <small className="font-semibold">{project.ownerName}</small>
+              </p>
+              <div className="flex justify-between font-semibold">
+                <p>
+                  <small>Start date: {project.startDate}</small>
+                </p>
+                <p>
+                  <small>End date: {project.endDate}</small>
+                </p>
+              </div>
+              <p>Tasks: {project.task}</p>
+            </div>
+          </div>
+        ))}
       </div>
-
     </section>
   );
 };
