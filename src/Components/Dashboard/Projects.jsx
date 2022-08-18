@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { GrAdd } from "react-icons/gr";
+import { useQuery } from "react-query";
+import Loading from "../Shared/Loading";
 import AddProjectModal from "./AddProjectModal";
+import Project from "./Project";
 const Projects = () => {
-  const [allProjects, setAllProjects] = useState([]);
 
-  useEffect(() => {
-    fetch(`https://protrackbd.herokuapp.com/projects`)
-      .then((res) => res.json())
-      .then((data) => setAllProjects(data));
-  }, []);
+  const { data: allProjects, isLoading, refetch } = useQuery('project', () => fetch('http://localhost:5001/projects', {
+    method: 'GET',
+  }).then(res => res.json()));
+  if (isLoading) {
+    return <Loading />
+  }
 
   return (
     <section className="p-10">
@@ -17,6 +19,9 @@ const Projects = () => {
         <AddProjectModal />
       </div>
       <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-6 justify-items-center overscroll-y-none">
+        {
+          allProjects.map(project => <Project key={project._id} project={project}></Project>)
+        }
         {allProjects.map((project) => (
           <div className="card lg:max-w-lg bg-seaBlue border-l-8 border-blue text-primary-content cursor-pointer shadow-xl transform transition duration-500 hover:scale-110 ">
             <div className="card-body">
