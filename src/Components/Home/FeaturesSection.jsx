@@ -16,18 +16,12 @@ const FeaturesSection = () => {
         </div>
         <div className="p-10">
           <p className="text-paragraph">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit hic,
-            ab officiis ut pariatur eos amet laboriosam, dolore ipsum blanditiis
-            repellat voluptate exercitationem, qui iure quam. Cumque iure
-            nesciunt odio.
+            ProTrack is issue tracking website for the modern developers. Here this website is much flexible and easier to use for the every developers. Even freshers can also work here as a team easily. All the required things we managed here so easily that it will be too much helpful for all the developers.
           </p>
         </div>
         <div className="p-10">
           <p className="text-paragraph">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit hic,
-            ab officiis ut pariatur eos amet laboriosam, dolore ipsum blanditiis
-            repellat voluptate exercitationem, qui iure quam. Cumque iure
-            nesciunt odio.
+            Team work is a most important part for the developers. They develop many projects for the clients. Here every developers can work as a team member. In a team member they can provide their roles in the team. Their will be one leader who will lead the team. The leader will check all the process and assign the task to members.
           </p>
         </div>
 
@@ -38,7 +32,7 @@ const FeaturesSection = () => {
           </h1>
           <p className="text-sm  font-bold text-paragraph">
             In our software team leaders can allocate and assign people tasks
-            without over (or under) allocating their schedules.
+            without over (or under) allocating their schedules. They can see their task in their dashboard with all the required information.
           </p>
         </div>
 
@@ -48,8 +42,7 @@ const FeaturesSection = () => {
             Assigning Task
           </h1>
           <p className="font-bold text-sm text-paragraph">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-            fugiat quos rem qui voluptas totam rerum, vero alias incid
+            ProTrack is a software where developers are checking their process. The leader can here assign task to the team members and the members can see their assigned and will complete the task as follows.
           </p>
         </div>
 
@@ -59,8 +52,7 @@ const FeaturesSection = () => {
             Progress E valuation
           </h1>
           <p className="font-bold text-sm text-paragraph">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-            fugiat quos rem qui voluptas totam rerum, vero alias incid
+            Using the protrack the leaders can evaluate their team members and all the assigning task. Here every members can be evaluate easily and check all the working process here.
           </p>
         </div>
       </div>
