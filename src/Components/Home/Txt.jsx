@@ -2,7 +2,7 @@ import React from "react";
 
 const Txt = () => {
   return (
-    <div className="text-center lg:w-full lg:mt-64 my-24 p-10 lg:my-0">
+    <div className="text-center lg:w-full lg: my-24 p-32 lg:my-0 ">
       <h2 className="lg:text-4xl font-bold text-2xl">
         It’s more than work. It’s a way of working together.
       </h2>
