@@ -12,7 +12,7 @@ const TaskPage = () => {
             .then(data => setProject(data))
     }, [project, id]);
     return (
-        <div>
+        <div className='px-6'>
             <h1 className='my-5 text-2xl font-bold'>Project: <small className='text-emerald-400'>{project.projectTitle}</small></h1>
             <div className='grid gap-10 grid-cols-5 mr-10'>
                 <div class="card w-40 h-32 bg-green-400 shadow-xl">

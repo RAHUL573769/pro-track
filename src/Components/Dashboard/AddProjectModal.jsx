@@ -9,7 +9,7 @@ const AddProjectModal = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
+  const onSubmit = (data, event) => {
     const url = `https://protrackbd.herokuapp.com/projects`;
     fetch(url, {
       method: "POST",
@@ -23,7 +23,10 @@ const AddProjectModal = () => {
         console.log(result);
         reset();
       });
+    event.preventDefault()
   };
+
+
   return (
     <div>
       {/* <!-- The button to open modal --> */}
@@ -36,7 +39,7 @@ const AddProjectModal = () => {
       <div className="modal">
         <div className="modal-box border-double border-8 border-emerald-500">
           <div>
-            <h3 className="font-bold text-lg text-center p-2 rounded-lg bg-seaBlue text-white">
+            <h3 className="font-bold text-lg text-center p-2 rounded-lg bg-blue-500 text-white">
               Hello user! Create Your project here.
             </h3>
           </div>
@@ -56,6 +59,7 @@ const AddProjectModal = () => {
               className="border-solid border-2 border-base-200 w-full "
               placeholder="App development"
               {...register("projectTitle")}
+              required
             />
 
             <label
@@ -73,6 +77,7 @@ const AddProjectModal = () => {
               placeholder="you@example.com"
               defaultValue={""}
               {...register("about")}
+
             />
             <label
               htmlFor="owner"
@@ -88,6 +93,7 @@ const AddProjectModal = () => {
               placeholder="Mark Don"
               className="border-solid border-2 ml-2 border-base-200 w-56 "
               {...register("owner")}
+              required
             />
 
             <div className="flex mt-5">
@@ -105,6 +111,7 @@ const AddProjectModal = () => {
                   id="start"
                   className="border-solid border-2 border-base-200 w-48"
                   {...register("startDate")}
+                  required
                 />
               </div>
 
@@ -122,6 +129,7 @@ const AddProjectModal = () => {
                   id="end"
                   className="border-solid border-2 border-base-200 w-48"
                   {...register("endDate")}
+                  required
                 />
               </div>
             </div>
@@ -140,12 +148,14 @@ const AddProjectModal = () => {
               placeholder="Mark Don"
               className="border-solid border-2 ml-2 border-base-200 w-56 "
               {...register("team")}
+              required
             />
             <div className="modal-action flex justify-between">
               <label for="my-modal" className="btn btn-info btn-sm">
                 Cancel
               </label>
               <input
+                for="my-modal"
                 type="submit"
                 value="submit"
                 className="btn btn-success btn-sm"

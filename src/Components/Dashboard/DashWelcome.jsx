@@ -11,7 +11,7 @@ const DashWelcome = () => {
           </div>
           <div class="text-right">
             <p class="text-2xl">1,257</p>
-            <p>Visitors</p>
+            <p>Users</p>
           </div>
         </div>
         <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
@@ -20,7 +20,7 @@ const DashWelcome = () => {
           </div>
           <div class="text-right">
             <p class="text-2xl">557</p>
-            <p>Orders</p>
+            <p>Projects</p>
           </div>
         </div>
         <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
@@ -29,7 +29,7 @@ const DashWelcome = () => {
           </div>
           <div class="text-right">
             <p class="text-2xl">$11,257</p>
-            <p>Sales</p>
+            <p>Total Tasks</p>
           </div>
         </div>
         <div class="bg-blue-500 dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">
