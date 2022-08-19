@@ -4,44 +4,46 @@ import Loading from "../Shared/Loading";
 import AddProjectModal from "./AddProjectModal";
 import Project from "./Project";
 const Projects = () => {
-
+  
   const { data: allProjects, isLoading, refetch } = useQuery('project', () => fetch('http://localhost:5001/projects', {
     method: 'GET',
   }).then(res => res.json()));
+  
   if (isLoading) {
     return <Loading />
   }
+  refetch()
+
+  const handleDelete = id => {
+    const url = `http://localhost:5001/projects/${id}`;
+    console.log(url)
+    fetch(url, {
+        method: 'DELETE'
+    })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            const remaining = allProjects.filter(project => project._id !== id);
+            refetch()
+              
+        })
+
+
+}
 
   return (
-    <section className="p-10">
-      <div className="flex justify-between">
-        <h1 className="text-3xl font-semibold font-mono">Project list</h1>
+    <section className="lg:p-10 m-5">
+      <div className="flex justify-between mb-4">
+        <h1 className="lg:text-3xl text-xl font-semibold font-mono mt-5">Project list</h1>
         <AddProjectModal />
       </div>
-      <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-6 justify-items-center overscroll-y-none">
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 justify-items-center overscroll-y-none">
         {
-          allProjects.map(project => <Project key={project._id} project={project}></Project>)
+          allProjects.map(project => <Project key={project._id} project={project} handleDelete={handleDelete}></Project>)
         }
-        {allProjects.map((project) => (
-          <div className="card lg:max-w-lg bg-seaBlue border-l-8 border-blue text-primary-content cursor-pointer shadow-xl transform transition duration-500 hover:scale-110 ">
-            <div className="card-body">
-              <h2 className="card-title">{project.projectName}</h2>
-              <p>
-                <small className="font-semibold">{project.ownerName}</small>
-              </p>
-              <div className="flex justify-between font-semibold">
-                <p>
-                  <small>Start date: {project.startDate}</small>
-                </p>
-                <p>
-                  <small>End date: {project.endDate}</small>
-                </p>
-              </div>
-              <p>Tasks: {project.task}</p>
-            </div>
-          </div>
-        ))}
+        
       </div>
+      
     </section>
   );
 };

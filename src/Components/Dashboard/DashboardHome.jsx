@@ -12,23 +12,23 @@ const DashboardHome = () => {
     <div className="flex">
       <div className="drawer drawer-mobile">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+        
         <div className="drawer-content flex flex-col">
           {/* <!-- Page content here --> */}
+          
           <div>
-            <DashboardNav/>
+            <DashboardNav />
           </div>
           <Outlet />
-          <label
-            for="my-drawer-2"
-            className="btn btn-primary drawer-button lg:hidden"
-          >
-            Open drawer
-          </label>
         </div>
         <div className="drawer-side">
           <label for="my-drawer-2" className="drawer-overlay"></label>
-          
-          <ul className="menu p-4 overflow-y-auto w-72 bg-base-100 text-base-content bg-background">
+
+          <ul className="menu overflow-y-auto w-72 bg-base-100 text-base-content bg-background">
+
+        
+            <h1 className="text-center text-3xl mt-2 font-bold text-rose-300">ProTrack</h1>
+            <div class="block w-72 h-1 mt-2 bg-gray-400 dark:bg-gray-700"></div>
 
             {/* <!-- Sidebar content here --> */}
             <li class="px-5 hidden md:block">
@@ -47,7 +47,7 @@ const DashboardHome = () => {
             <li>
               <Link to="/dashboard/projects" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-zinc-200 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-green-500 dark:hover:border-gray-800 pr-6">
                 <span class="inline-flex justify-center items-center ml-4">
-                  <GrProjects/>
+                  <GrProjects />
                 </span>
                 <span class="ml-2 text-sm tracking-wide truncate">Projects</span>
                 <span class="hidden md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-green-500 bg-indigo-50 rounded-full">New</span>
@@ -56,7 +56,7 @@ const DashboardHome = () => {
             <li>
               <Link to="/dashboard/tasks" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-zinc-200 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-green-500 dark:hover:border-gray-800 pr-6">
                 <span class="inline-flex justify-center items-center ml-4">
-                  <BiTask className="w-5 h-5"/>
+                  <BiTask className="w-5 h-5" />
                 </span>
                 <span class="ml-2 text-sm tracking-wide truncate">My Tasks</span>
               </Link>
@@ -64,7 +64,7 @@ const DashboardHome = () => {
             <li>
               <Link to="/dashboard/calender" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-zinc-200 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-green-500 dark:hover:border-gray-800 pr-6">
                 <span class="inline-flex justify-center items-center ml-4">
-                 <AiTwotoneCalendar className="w-5 h-5"/>
+                  <AiTwotoneCalendar className="w-5 h-5" />
                 </span>
                 <span class="ml-2 text-sm tracking-wide truncate">Calender</span>
                 <span class="hidden md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-500 bg-red-50 rounded-full">1.2k</span>
@@ -73,7 +73,7 @@ const DashboardHome = () => {
             <li>
               <Link to="/dashboard/meetings" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-zinc-200 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-green-500 dark:hover:border-gray-800 pr-6">
                 <span class="inline-flex justify-center items-center ml-4">
-                 <MdOutlineMeetingRoom className="w-5 h-5"/>
+                  <MdOutlineMeetingRoom className="w-5 h-5" />
                 </span>
                 <span class="ml-2 text-sm tracking-wide truncate">Meetings</span>
                 <span class="hidden md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-500 bg-red-50 rounded-full">1.2k</span>
