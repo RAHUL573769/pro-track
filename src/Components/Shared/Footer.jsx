@@ -1,13 +1,16 @@
+import logo from '../../../src/images/protrack.png';
+
 const Footer = () => {
   return (
-    <div>
-      <footer className="footer p-10 bg-baseDark text-white">
+    <div className='p-10 bg-baseDark'>
+      <footer className="footer p-10 text-white">
         <div>
-          <span className="footer-title">Services</span>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          {/* <span className="footer-title">Services</span> */}
+          <img src={logo} alt="" style={{ width: 200 }} />
+          <a className="link link-hover p-1">info@protrack.com</a>
+          <a className="link link-hover p-1">+8801826668777</a>
+          <a className="link link-hover p-1">Dhaka Bangladesh</a>
+          {/* <a className="link link-hover">Advertisement</a> */}
         </div>
         <div>
           <span className="footer-title">Company</span>
@@ -43,7 +46,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="bg-blue text-white text-center pb-6 text-sm">
+      <div className="bg-baseDark text-white text-center pb-6 text-sm">
         <p>Copyright &copy; ProTrack 2022</p>
       </div>
     </div>
