@@ -1,3 +1,4 @@
+import ConnectApps from "../Components/Home/ConnectApps";
 import FeaturesSection from "../Components/Home/FeaturesSection";
 import Hero from "../Components/Home/Hero";
 import Introduction from "../Components/Home/Introduction";
@@ -17,12 +18,12 @@ const Home = () => {
       <Txt></Txt>
       <Introduction></Introduction>
       <Service></Service>
-      <UserIcon></UserIcon>
-      
-      <Summery/>
+      {/* <UserIcon></UserIcon> */}
+      <ConnectApps></ConnectApps>
+      <Summery />
       <ProUser></ProUser>
       {/* <Objective></Objective> */}
-      <Testimonials/>
+      <Testimonials />
     </div>
   );
 };
