@@ -48,17 +48,17 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Calendar</h1>
-      <h2>Add New Event</h2>
+      {/* <h1>Calendar</h1>
+      <h2>Add New Event</h2> */}
       <div>
-        <input
+        {/* <input
           type="text"
           placeholder="Add Title"
           style={{ width: "20%", marginRight: "10px" }}
           value={newEvent.title}
           onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
-        />
-        <DatePicker
+        /> */}
+        {/* <DatePicker
           placeholderText="Start Date"
           style={{ marginRight: "10px" }}
           selected={newEvent.start}
@@ -68,10 +68,10 @@ function App() {
           placeholderText="End Date"
           selected={newEvent.end}
           onChange={(end) => setNewEvent({ ...newEvent, end })}
-        />
-        <button stlye={{ marginTop: "10px" }} onClick={handleAddEvent}>
+        /> */}
+        {/* <button stlye={{ marginTop: "10px" }} onClick={handleAddEvent}>
           Add Event
-        </button>
+        </button> */}
       </div>
       <Calendar
         localizer={localizer}

@@ -1,40 +1,57 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { AiTwotoneDelete } from 'react-icons/ai';
+import React, { useEffect, useState } from "react";
+import { useQuery } from "react-query";
+import Loading from "../Shared/Loading";
+import AddProjectModal from "./AddProjectModal";
+import Project from "./Project";
+const Projects = () => {
+  const {
+    data: allProjects,
+    isLoading,
+    refetch,
+  } = useQuery("project", () =>
+    fetch("http://localhost:5001/projects", {
+      method: "GET",
+    }).then((res) => res.json())
+  );
 
-const Project = ({ project, handleDelete }) => {
-  const { about, owner, projectTitle, startDate, endDate, team, email, _id } = project;
-  console.log(project._id);
-
-  const navigate = useNavigate();
-  const navigateToTask = id => {
-    navigate(`/dashboard/taskPage/${id}`)
+  if (isLoading) {
+    return <Loading />;
   }
-  return (
-    <div class="card lg:max-w-lg bg-seaBlue border-l-8 border-blue text-primary-content cursor-pointer shadow-xl transform transition duration-500 hover:scale-110 ">
-      <div>
-        <div class="card-body">
-          <div className='flex justify-between gap-4 mb-3'>
-            <div>
-              <h2 class="text-center text-2xl uppercase font-bold">{projectTitle.slice(0, 8)}</h2>
-            </div>
-            <button onClick={() => handleDelete(_id)}>
-              <AiTwotoneDelete className='text-rose-500'/>
-            </button>
+  refetch();
 
-          </div>
-          <div onClick={() => navigateToTask(_id)}>
-            <h2 className='font-bold text-header mb-2'>Owner Name: <small className="uppercase text-paragraph">{owner.slice(0,8)}</small></h2>
-            <div className="flex justify-between gap-4 font-semibold mb-2">
-              <p className='font-bold text-header'>Start date:<small className="uppercase text-paragraph"> {startDate}</small></p>
-              <p className='font-bold text-header'>End date:<small className="uppercase text-paragraph"> {endDate}</small></p>
-            </div>
-            <h2 className='font-bold text-header'>Description : <span className='text-paragraph'>{about.slice(0, 50)}</span></h2>
-          </div>
-        </div>
+  const handleDelete = (id) => {
+    const url = `http://localhost:5001/projects/${id}`;
+    console.log(url);
+    fetch(url, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        const remaining = allProjects.filter((project) => project._id !== id);
+        refetch();
+      });
+  };
+
+  return (
+    <section className="lg:p-10 m-5">
+      <div className="flex justify-between mb-4">
+        <h1 className="lg:text-3xl text-xl font-semibold font-mono mt-5">
+          Project list
+        </h1>
+        <AddProjectModal />
       </div>
-    </div>
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 justify-items-center overscroll-y-none">
+        {allProjects.map((project) => (
+          <Project
+            key={project._id}
+            project={project}
+            handleDelete={handleDelete}
+          ></Project>
+        ))}
+      </div>
+    </section>
   );
 };
 
-export default Project;
+export default Projects;
