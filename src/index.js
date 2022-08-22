@@ -8,12 +8,9 @@ import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Calendar } from "react-big-calendar";
 
-<<<<<<< HEAD
-const queryClient = new QueryClient();
-=======
 
 const queryClient = new QueryClient()
->>>>>>> 441d809b0cf8e6ad12075b35d54d8ca7d9991953
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
