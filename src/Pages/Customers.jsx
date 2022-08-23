@@ -44,7 +44,7 @@ const Customers = () => {
           /> */}
         </figure>
         <div class="card-body items-center text-center">
-          <h2 class="card-title">User 3</h2>
+          <h2 class="card-title">User 13</h2>
 
           <div class="card-actions">
             <button class="btn btn-primary">Buy Now</button>
