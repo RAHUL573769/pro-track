@@ -6,7 +6,8 @@ const TaskPage = () => {
   const [project, setProject] = useState({});
 
   useEffect(() => {
-    const url = `http://localhost:5001/projects/${id}`;
+    const url = `https://protrackbd.herokuapp.com/projects/${id}`;
+
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProject(data));

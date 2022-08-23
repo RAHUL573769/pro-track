@@ -9,12 +9,14 @@ import Files from "./Components/Dashboard/Files";
 import Issues from "./Components/Dashboard/Issues";
 import Meetings from "./Components/Dashboard/Meetings";
 import MyTasks from "./Components/Dashboard/MyTasks";
+import Profile from "./Components/Dashboard/Profile";
 import Projects from "./Components/Dashboard/Projects";
 import TaskPage from "./Components/Dashboard/TaskPage";
 import Footer from "./Components/Shared/Footer";
 import Navbar from "./Components/Shared/Navbar";
 import AboutUs from "./Pages/AboutUs";
 import Contact from "./Pages/Contact";
+import Customers from "./Pages/Customers";
 
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
@@ -24,6 +26,7 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Home />}></Route>
+          <Route path="/customers" element={<Customers></Customers>}></Route>
           <Route path="/about" element={<AboutUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="/contact" element={<Contact />}></Route>
@@ -39,6 +42,7 @@ function App() {
             <Route path="meetings" element={<Meetings />}></Route>
             <Route path="feedbacks" element={<Feedback></Feedback>}></Route>
             <Route path="files" element={<Files></Files>}></Route>
+            <Route path="profile" element={<Profile></Profile>}></Route>
           </Route>
         </Routes>
       </div>

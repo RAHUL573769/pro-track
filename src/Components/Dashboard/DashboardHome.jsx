@@ -192,10 +192,10 @@ const DashboardHome = () => {
               <Link to="/dashboard/feedbacks">Feedback</Link>
             </li>
             {/* <li>
-              <Link to="/dashboard/issues">Issues</Link>
-            </li>
-            
-            <li>
+              <Link to="/dashboard/profilr">Profile</Link>
+            </li> */}
+
+            {/* <li>
               <Link to="/dashboard/files">Company's Files</Link>
             </li> */}
             {/* <li>
