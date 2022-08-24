@@ -1,7 +1,12 @@
+import { signOut } from "firebase/auth";
 import { FiMoreVertical } from "react-icons/fi";
 import { GrNotification } from "react-icons/gr";
 import { Link } from "react-router-dom";
+import auth from "../../firebase.init";
 const Navbar = () => {
+  const logout = () => {
+    signOut(auth);
+  };
   const navItems = (
     <>
       <li>
@@ -112,7 +117,7 @@ const Navbar = () => {
             </li>
             <hr />
             <li>
-              <a href="/">Logout</a>
+              <span onClick={() => logout()}>Logout</span>
             </li>
           </ul>
         </div>
