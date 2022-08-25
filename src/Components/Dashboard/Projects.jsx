@@ -5,7 +5,7 @@ import AddProjectModal from "./AddProjectModal";
 import Project from "./Project";
 const Projects = () => {
   
-  const { data: allProjects, isLoading, refetch } = useQuery('project', () => fetch('http://localhost:5001/projects', {
+  const { data: allProjects, isLoading, refetch } = useQuery('project', () => fetch('https://protrackbd.herokuapp.com/projects', {
     method: 'GET',
   }).then(res => res.json()));
   
@@ -15,7 +15,7 @@ const Projects = () => {
   refetch()
 
   const handleDelete = id => {
-    const url = `http://localhost:5001/projects/${id}`;
+    const url = `https://protrackbd.herokuapp.com/projects/${id}`;
     console.log(url)
     fetch(url, {
         method: 'DELETE'

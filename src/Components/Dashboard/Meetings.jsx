@@ -51,6 +51,7 @@ const Meetings = () => {
                   </label>
                   <input
                     type="text"
+                    name="meetingtype"
                     placeholder="Write the type of meeting"
                     className="input input-bordered w-full "
                     {...register("meetingtype", { required: true })}

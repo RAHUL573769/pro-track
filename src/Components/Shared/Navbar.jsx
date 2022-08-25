@@ -1,6 +1,7 @@
 import { FiMoreVertical } from "react-icons/fi";
 import { GrNotification } from "react-icons/gr";
 import { Link } from "react-router-dom";
+import logo from '../../images/logo.png'
 const Navbar = () => {
   const navItems = (
     <>
@@ -66,56 +67,13 @@ const Navbar = () => {
           to="/"
           className="text-red-500 cursor-pointer text-3xl font-extrabold ml-2"
         >
-          ProTrack
+         <img width={200} src={logo} alt="" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0 font-bold text-white">
           {navItems}
         </ul>
-      </div>
-      <div className="navbar-end">
-        <div className="flex-none">
-          <div className="mr-5 text-2xl">
-            <GrNotification />
-          </div>
-        </div>
-        <div className="dropdown dropdown-end">
-          <label
-            tabIndex="0"
-            className="btn btn-ghost btn-circle avatar online"
-          >
-            <div className="w-10 rounded-full">
-              <img src="https://placeimg.com/80/80/people" alt="" />
-            </div>
-          </label>
-          <ul
-            tabIndex="0"
-            className="menu menu-compact dropdown-content mt-3 p-4 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <a href="/">Admin console</a>
-            </li>
-            <li>
-              <a href="/">My Settings</a>
-            </li>
-            <li>
-              <a href="/">Privacy policy</a>
-            </li>
-            <li>
-              <a href="/">
-                More{" "}
-                <span className="ml-24">
-                  <FiMoreVertical />
-                </span>
-              </a>
-            </li>
-            <hr />
-            <li>
-              <a href="/">Logout</a>
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
   );

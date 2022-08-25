@@ -6,6 +6,7 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from 'react-query';
+import 'tw-elements';
 
 
 const queryClient = new QueryClient()
