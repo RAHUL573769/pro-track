@@ -1,8 +1,13 @@
+import { signOut } from "firebase/auth";
 import { FiMoreVertical } from "react-icons/fi";
 import { GrNotification } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import logo from '../../images/logo.png'
+import auth from "../../firebase.init";
 const Navbar = () => {
+  const logout = () => {
+    signOut(auth);
+  };
   const navItems = (
     <>
       <li>

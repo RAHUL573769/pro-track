@@ -14,11 +14,14 @@ import TaskDetails from "./Components/Dashboard/TaskDetails";
 import TaskPage from "./Components/Dashboard/TaskPage";
 import Footer from "./Components/Shared/Footer";
 import Navbar from "./Components/Shared/Navbar";
+import RequireAuth from "./Components/Shared/RequireAuth";
 import AboutUs from "./Pages/AboutUs";
+import Admin from "./Pages/Admin";
 import Contact from "./Pages/Contact";
 
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
+import Register from "./Pages/Register";
 function App() {
   return (
     <div>
@@ -27,8 +30,25 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<AboutUs />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/admin"
+            element={
+              <RequireAuth>
+                {" "}
+                <Admin />{" "}
+              </RequireAuth>
+            }
+          />
           <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/dashboard" element={<DashboardHome></DashboardHome>}>
+          <Route
+            path="/dashboard"
+            element={
+              <RequireAuth>
+                <DashboardHome></DashboardHome>
+              </RequireAuth>
+            }
+          >
             <Route index element={<DashWelcome></DashWelcome>}></Route>
             <Route path="projects" element={<Projects></Projects>}></Route>
             <Route path="tasks" element={<MyTasks></MyTasks>}></Route>
