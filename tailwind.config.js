@@ -11,17 +11,19 @@ module.exports = {
         'header' :"#1B2022",
         'paragraph':"#5C677F"
       },
+    
     }
   },
   plugins: [require("daisyui")],
   daisyui: {
     styled: true,
-    themes: ["emerald", "night"],
+    themes: ["colors","dark",],
     base: true,
     utils: true,
     logs: true,
     rtl: false,
     prefix: "",
-    darkTheme: "night",
+    darkTheme: "dark",
   },
+  
 };
