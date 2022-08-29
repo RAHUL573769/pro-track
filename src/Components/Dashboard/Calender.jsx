@@ -3,6 +3,7 @@ import getDay from "date-fns/getDay";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
@@ -39,6 +40,14 @@ const events = [
 ];
 
 function App() {
+  // const [events, setEvent] = useState([]);
+
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/mycelander.json").then((res) =>
+  //     res.json().then((data) => setEvent(data))
+  //   );
+  // });
+
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
   const [allEvents, setAllEvents] = useState(events);
 
@@ -48,17 +57,17 @@ function App() {
 
   return (
     <div className="App">
-      {/* <h1>Calendar</h1>
-      <h2>Add New Event</h2> */}
+      <h1>Calendar</h1>
+      <h2>Add New Event</h2>
       <div>
-        {/* <input
+        <input
           type="text"
           placeholder="Add Title"
           style={{ width: "20%", marginRight: "10px" }}
           value={newEvent.title}
           onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
-        /> */}
-        {/* <DatePicker
+        />
+        <DatePicker
           placeholderText="Start Date"
           style={{ marginRight: "10px" }}
           selected={newEvent.start}
@@ -68,10 +77,10 @@ function App() {
           placeholderText="End Date"
           selected={newEvent.end}
           onChange={(end) => setNewEvent({ ...newEvent, end })}
-        /> */}
-        {/* <button stlye={{ marginTop: "10px" }} onClick={handleAddEvent}>
+        />
+        <button stlye={{ marginTop: "10px" }} onClick={handleAddEvent}>
           Add Event
-        </button> */}
+        </button>
       </div>
       <Calendar
         localizer={localizer}

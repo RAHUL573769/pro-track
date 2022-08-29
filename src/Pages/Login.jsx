@@ -2,14 +2,34 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import unlock from "../Assets/images/unlock.svg";
 import SocialLogin from "../Components/Login/SocialLogin";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../firebase.init";
+import Loading from "../Components/Shared/Loading";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) =>
+    signInWithEmailAndPassword(data.email, data.password);
+    const location = useLocation();
+    const navigate = useNavigate();
+    let from = location.state?.from?.pathname || "/";
+  if (loading) {
+    return <Loading />;
+  }
+  if (user) {
+    console.log(user);
+    navigate(from, { replace: true });
+  }
+  if (error) {
+    console.log(error);
+  }
   return (
     <div className="mb-56 md:mb-0">
       <section className="h-screen">
@@ -54,6 +74,12 @@ const Login = () => {
 
                 <input type="submit" className="btn w-full" value="Login" />
               </form>
+              <p className="text-right">
+                Don't have an account?{" "}
+                <Link to={"/register"} className="font-bold">
+                  Register.
+                </Link>
+              </p>
               <SocialLogin />
             </div>
           </div>

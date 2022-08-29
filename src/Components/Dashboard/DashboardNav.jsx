@@ -1,15 +1,15 @@
+import { signOut } from "firebase/auth";
 import React from "react";
 import { FiMoreVertical } from "react-icons/fi";
-
-import "./Dash";
+import { useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
 
 const DashboardNav = () => {
-  // const chk = document.getElementById("chk");
-
-  // chk.addEventListener("change", () => {
-  //   document.body.classList.toggle("dark");
-  // });
-
+  const navigate = useNavigate();
+  const logout = () => {
+    signOut(auth);
+    navigate("/", { replace: true });
+  };
   return (
     <div>
       <div class="flex justify-between items-center h-14 bg-gray-100 dark:bg-gray-800 header-right">
@@ -62,7 +62,7 @@ const DashboardNav = () => {
             <li>
               <label class="swap swap-rotate mr-3">
                 {/* <!-- this hidden checkbox controls the state --> */}
-                <input id="chk" type="checkbox" />
+                <input type="checkbox" />
 
                 {/* <!-- sun icon --> */}
                 <svg
@@ -170,7 +170,7 @@ const DashboardNav = () => {
                   </li>
                   <hr />
                   <li>
-                    <a href="/">Logout</a>
+                    <span onClick={() => logout()}>Logout</span>
                   </li>
                 </ul>
               </div>
