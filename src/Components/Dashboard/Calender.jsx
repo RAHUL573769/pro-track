@@ -79,7 +79,7 @@ function App() {
           onChange={(end) => setNewEvent({ ...newEvent, end })}
         />
         <button stlye={{ marginTop: "10px" }} onClick={handleAddEvent}>
-          Add Event
+          Add Events
         </button>
       </div>
       <Calendar
