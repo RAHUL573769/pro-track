@@ -24,23 +24,23 @@ const events = [
     title: "Big Meeting",
     allDay: true,
     start: new Date(2021, 6, 0),
-    end: new Date(2021, 6, 0),
+    end: new Date(2021, 6, 0)
   },
   {
     title: "Vacation",
     start: new Date(2021, 6, 7),
-    end: new Date(2021, 6, 10),
+    end: new Date(2021, 6, 10)
   },
   {
     title: "Conference",
     start: new Date(2021, 6, 20),
-    end: new Date(2021, 6, 23),
+    end: new Date(2021, 6, 23)
   },
 ];
 
 function App() {
-  const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
-  const [allEvents, setAllEvents] = useState(events);
+  const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" })
+  const [allEvents, setAllEvents] = useState(events)
 
   function handleAddEvent() {
     setAllEvents([...allEvents, newEvent]);
@@ -57,6 +57,13 @@ function App() {
           style={{ width: "20%", marginRight: "10px" }}
           value={newEvent.title}
           onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
+        />
+        <input
+          type="name"
+          placeholder="User-name"
+          style={{ width: "20%", marginRight: "10px" }}
+          value={newEvent.name}
+          onChange={(e) => setNewEvent({ ...newEvent, name: e.target.value })}
         />
         <DatePicker
           placeholderText="Start Date"
