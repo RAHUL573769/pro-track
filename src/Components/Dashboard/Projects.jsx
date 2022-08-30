@@ -4,6 +4,7 @@ import Loading from "../Shared/Loading";
 import AddProjectModal from "./AddProjectModal";
 import Project from "./Project";
 const Projects = () => {
+  
   const {
     data: allProjects,
     isLoading,
