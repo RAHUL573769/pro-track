@@ -6,7 +6,7 @@ import assign from "../../Assets/images/assignment.png";
 
 const FeaturesSection = () => {
   return (
-    <section className=" mt-10 rounded-xl">
+    <section className="rounded-xl">
       <div className=" bg-background rounded-xl drop-shadow-2xl p-14 gap-5  grid grid-cols-1 lg:grid-cols-3  ">
         <div className="p-10">
           <h1 className="text-5xl text-header">Explore what we offer</h1>
