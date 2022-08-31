@@ -1,22 +1,51 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import Loading from "../Shared/Loading";
+import AddTask from "./AddTask";
+import { useQuery } from "react-query";
+import TaskDetails from "./TaskDetails";
 
 const TaskPage = () => {
   const { id } = useParams();
   const [project, setProject] = useState({});
 
+  const [click, setClick] = useState(false);
+
+  const navigate = useNavigate();
+
+  const navigateToTask = (id) => {
+    navigate(`/dashboard/taskDetails/${id}`);
+  };
+
   useEffect(() => {
     const url = `https://protrackbd.herokuapp.com/projects/${id}`;
-
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProject(data));
   }, [project, id]);
+
+  const {
+    data: allTask,
+    isLoading,
+    refetch,
+  } = useQuery("task", () =>
+    fetch("https://protrackbd.herokuapp.com/issues", {
+      method: "GET",
+    }).then((res) => res.json())
+  );
+
+  if (isLoading) {
+    return <Loading />;
+  }
+  refetch();
+
   return (
     <div className="px-6">
       <h1 className="my-5 text-2xl font-bold">
         Project:{" "}
-        <small className="text-emerald-400">{project.projectTitle}</small>
+        <small className="text-emerald-400 uppercase">
+          {project.projectTitle}
+        </small>
       </h1>
       <div className="grid gap-10 grid-cols-5 mr-10">
         <div class="card w-40 h-32 bg-green-400 shadow-xl">
@@ -53,41 +82,47 @@ const TaskPage = () => {
           <h1 className="text-xl font-bold text-green-500 mt-2">
             Task Details
           </h1>
-          <button className="btn btn-accent">Add New Task</button>
+          <button
+            onClick={setClick(true)}
+            class="inline-block px-6 py-2.5 bg-accent text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg  focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mr-1.5"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"
+          >
+            Add TAsk
+          </button>
         </div>
         <div class="overflow-x-auto">
           <table class="table w-full">
-            <thead>
+            <thead className="hover">
               <tr>
+                <th>No</th>
+                <th>Task name</th>
+                <th>Assigned by</th>
+                <th>Assigned to</th>
+                <th>Priority</th>
+                <th>Deadline</th>
                 <th></th>
-                <th>Name</th>
-                <th>Job</th>
-                <th>Favorite Color</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th>1</th>
-                <td>Cy Ganderton</td>
-                <td>Quality Control Specialist</td>
-                <td>Blue</td>
-              </tr>
-
-              <tr class="hover">
-                <th>2</th>
-                <td>Hart Hagerty</td>
-                <td>Desktop Support Technician</td>
-                <td>Purple</td>
-              </tr>
-
-              <tr>
-                <th>3</th>
-                <td>Brice Swyre</td>
-                <td>Tax Accountant</td>
-                <td>Red</td>
-              </tr>
+              {allTask.map((task, index) => (
+                <tr>
+                  <th>{index + 1}</th>
+                  <td>{task.taskName}</td>
+                  <td>{task.owner}</td>
+                  <td>{task.Assignee}</td>
+                  <td className="bg-green-500 rounded-xl text-center text-white font-bold">
+                    {task.priority}
+                  </td>
+                  <td>{task.Deadline}</td>
+                  <td onClick={() => navigateToTask(task._id)}>Details</td>
+                </tr>
+              ))}
             </tbody>
           </table>
+          {click && <AddTask />}
         </div>
       </div>
     </div>
