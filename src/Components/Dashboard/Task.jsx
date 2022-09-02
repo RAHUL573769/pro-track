@@ -20,7 +20,7 @@ const Task = ({ task }) => {
       status: event.target.value
     }
     console.log(statusUpdate);
-      fetch(`https://protrackbd.herokuapp.comupdate/${id}`, {
+      fetch(`https://protrackbd.herokuapp.com/update/${id}`, {
           method: 'PUT',
           headers: {
               'content-type': 'application/json',

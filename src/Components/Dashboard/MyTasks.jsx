@@ -12,7 +12,7 @@ const MyTasks = () => {
   const [user] = useAuthState(auth)
 
 
-  const { data: myTask, isLoading, refetch } = useQuery('task', () => fetch(`https://protrackbd.herokuapp.commyIssues?email=${user?.email}`, {
+  const { data: myTask, isLoading, refetch } = useQuery('task', () => fetch(`https://protrackbd.herokuapp.com/myIssues?email=${user?.email}`, {
     method: 'GET',
   }).then(res => res.json()));
 

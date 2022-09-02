@@ -22,7 +22,7 @@ const AddProjectModal = () => {
       data: data
 
     }
-    const url = `https://protrackbd.herokuapp.comprojects`;
+    const url = `https://protrackbd.herokuapp.com/projects`;
     fetch(url, {
       method: "POST",
       body: JSON.stringify(allData),
