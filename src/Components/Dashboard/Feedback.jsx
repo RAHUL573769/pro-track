@@ -14,7 +14,7 @@ const Feedback = () => {
   };
   return (
     <div class="hero min-h-screen">
-    <div class="hero-content flex-col lg:flex-row lg:gap-20" >
+    <div class="hero-content flex-col lg:flex-row lg:gap-20">
     <Lottie 
 	    options={defaultOptions}
         height={400}

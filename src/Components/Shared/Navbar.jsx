@@ -2,7 +2,7 @@ import { signOut } from "firebase/auth";
 import { FiMoreVertical } from "react-icons/fi";
 import { GrNotification } from "react-icons/gr";
 import { Link } from "react-router-dom";
-import logo from '../../images/logo.png'
+import logo from '../../Assets/Logo.png';
 import auth from "../../firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 const Navbar = () => {
@@ -46,7 +46,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar">
+    <div className="navbar lg:px-10 px-3 bg-fuchsia-300 border-neutral">
       <div className="navbar-start ">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -82,7 +82,7 @@ const Navbar = () => {
           to="/"
           className="text-red-500 cursor-pointer text-3xl font-extrabold ml-2"
         >
-          ProTrack
+          <img width={200} src={logo} alt="" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
