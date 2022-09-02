@@ -68,7 +68,7 @@ const Footer = () => {
    
   </footer>
    <div className="bg-white text-black text-center pb-6 text-sm py-3">
-   <p className='p-2 '>Copyright &copy; ProTrack 2022</p>
+   <p className=' '>Copyright &copy; ProTrack 2022</p>
  </div>
     </div>
   );

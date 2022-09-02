@@ -16,7 +16,7 @@ import { FaQuoteRight } from 'react-icons/fa';
 
 const Testimonials = () => {
   return (
-    <div className="bg-[url('/src/images/testimonials.jpg')] lg:h-screen mb-80 my-24 bg-cover">
+    <div className="bg-[url('/src/images/testimonials.jpg')] lg:h-screen  my-24 bg-cover">
       <div className="card lg:w-[584px] lg:h-[600px] p-14 bg-teal-500 shadow-xl lg:top-20 top-60 lg:left-[642px] rounded-none">
         <h1 className="ml-10 mt-5 text-slate-600 font-serif tracking-wider font-bold">
           Testimonial
