@@ -1,7 +1,10 @@
+import BuiltFeatures from "../Components/Home/BuiltFeatures";
 import ConnectApps from "../Components/Home/ConnectApps";
+import EndPart from "../Components/Home/EndPart";
 import FeaturesSection from "../Components/Home/FeaturesSection";
 import Hero from "../Components/Home/Hero";
 import Introduction from "../Components/Home/Introduction";
+
 import ProUser from "../Components/Home/ProUser";
 import Service from "../Components/Home/Service";
 import Summery from "../Components/Home/Summery";
@@ -20,9 +23,13 @@ const Home = () => {
       <Introduction></Introduction>
       <Service></Service>
       <ConnectApps></ConnectApps>
+      <BuiltFeatures></BuiltFeatures>
       <Summery />
       <ProUser></ProUser>
       <Testimonials />
+    <EndPart></EndPart>
+      
+    
     </div>
   );
 };
