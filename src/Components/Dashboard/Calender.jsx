@@ -40,13 +40,13 @@ const events = [
 ];
 
 function App() {
-  // const [events, setEvent] = useState([]);
+  const [events, setEvent] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:3000/mycelander.json").then((res) =>
-  //     res.json().then((data) => setEvent(data))
-  //   );
-  // });
+  useEffect(() => {
+    fetch("http://localhost:3000/mycelander.json").then((res) =>
+      res.json().then((data) => setEvent(data))
+    );
+  });
 
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
   const [allEvents, setAllEvents] = useState(events);
@@ -59,7 +59,7 @@ function App() {
     <div className="App">
       <h1>Calendar</h1>
       <h2>Add New Event</h2>
-      <div>
+      {/* <div>
         <input
           type="text"
           placeholder="Add Title"
@@ -81,7 +81,7 @@ function App() {
         <button stlye={{ marginTop: "10px" }} onClick={handleAddEvent}>
           Add Events
         </button>
-      </div>
+      </div> */}
       <Calendar
         localizer={localizer}
         events={allEvents}
