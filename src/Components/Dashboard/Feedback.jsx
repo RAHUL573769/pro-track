@@ -1,18 +1,31 @@
 import React from "react";
+import Lottie from "react-lottie";
+import animationData from '../../lotttie/99549-review-ratings.json'
 
 const Feedback = () => {
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  };
   return (
     <div class="hero min-h-screen">
     <div class="hero-content flex-col lg:flex-row lg:gap-20" >
-      <img src="https://i.ibb.co/MGpdr7k/organic-flat-feedback-concept-52683-62653.webp" class="lg:max-w-lg rounded-lg shadow-2xl ml--5"  alt=""/>
+    <Lottie 
+	    options={defaultOptions}
+        height={400}
+        width={400}
+      />
       <div >
       <div class="mx-auto w-full max-w-lg">
     <h1 class="text-4xl font-medium">Feedback</h1>
     <p class="mt-3">Email us at help@domain.com or give feedbacks here:</p>
 
-    <form class="mt-10">
-    
-    
+    <form class="mt-10">  
       <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" /> 
       <div class="grid gap-6 sm:grid-cols-2">
         <div class="relative z-0">

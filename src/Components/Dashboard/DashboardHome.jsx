@@ -1,21 +1,48 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
-import Navbar from "../Shared/Navbar";
+import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 import { GrProjects } from 'react-icons/gr';
+import { useQuery } from "react-query";
 import { BiTask } from 'react-icons/bi';
 import { AiTwotoneCalendar } from 'react-icons/ai';
+import { HiOutlineInbox } from 'react-icons/hi';
 import { MdOutlineMeetingRoom } from 'react-icons/md';
+import { VscFeedback } from 'react-icons/vsc';
 import DashboardNav from "./DashboardNav";
+import logo from '../../images/facicon.png';
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const DashboardHome = () => {
+
+  const { id } = useParams();
+
+  const navigate = useNavigate();
+
+  const navigateToTask = id => {
+    navigate(`/dashboard/projectDetails/${id}`)
+  }
+
+  const [user] = useAuthState(auth);
+  const email = user.email;
+
+  const {
+    data: allProjects,
+    refetch
+  } = useQuery("project", () =>
+    fetch(`https://protrackbd.herokuapp.comprojects?email=${email}`, {
+      method: "GET",
+    }).then((res) => res.json())
+  );
+  refetch();
+
   return (
     <div className="flex">
       <div className="drawer drawer-mobile">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        
+
         <div className="drawer-content flex flex-col">
           {/* <!-- Page content here --> */}
-          
+
           <div>
             <DashboardNav />
           </div>
@@ -24,10 +51,12 @@ const DashboardHome = () => {
         <div className="drawer-side">
           <label for="my-drawer-2" className="drawer-overlay"></label>
 
-          <ul className="menu overflow-y-auto w-72 bg-base-100 text-base-content bg-background">
+          <ul className="menu overflow-y-auto lg:w-76 w-60  bg-base-100 text-base-content bg-background">
 
-        
-            <h1 className="text-center text-3xl mt-2 font-bold text-rose-300">ProTrack</h1>
+
+           <div className="flex justify-center mt-3">
+           <img width={200} src={logo} alt="" />
+           </div>
             <div class="block w-72 h-1 mt-2 bg-gray-400 dark:bg-gray-700"></div>
 
             {/* <!-- Sidebar content here --> */}
@@ -71,6 +100,15 @@ const DashboardHome = () => {
               </Link>
             </li>
             <li>
+              <Link to="/dashboard/inbox" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-zinc-200 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-green-500 dark:hover:border-gray-800 pr-6">
+                <span class="inline-flex justify-center items-center ml-4">
+                  <HiOutlineInbox className="w-5 h-5" />
+                </span>
+                <span class="ml-2 text-sm tracking-wide truncate">Inbox</span>
+                <span class="hidden md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-500 bg-red-50 rounded-full">1.2k</span>
+              </Link>
+            </li>
+            <li>
               <Link to="/dashboard/meetings" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-zinc-200 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-green-500 dark:hover:border-gray-800 pr-6">
                 <span class="inline-flex justify-center items-center ml-4">
                   <MdOutlineMeetingRoom className="w-5 h-5" />
@@ -81,16 +119,28 @@ const DashboardHome = () => {
             </li>
             <li class="px-5 hidden md:block">
               <div class="flex flex-row items-center mt-5 h-8">
+                <div class="text-sm font-light tracking-wide text-gray-400 uppercase">Recent Projects</div>
+              </div>
+            </li>
+            {
+              allProjects?.slice(0 - 3).reverse().map(project => <li className="ml-10 py-2 cursor-pointer text-sm tracking-wide" >
+                {project.data?.projectTitle}
+              </li>)
+            }
+
+
+            <li class="px-5 hidden md:block">
+              <div class="flex flex-row items-center mt-5 h-8">
                 <div class="text-sm font-light tracking-wide text-gray-400 uppercase">Settings</div>
               </div>
             </li>
             <li>
-              <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-zinc-200 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-green-500 dark:hover:border-gray-800 pr-6">
+              <Link to="/dashboard/profile" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-zinc-200 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-green-500 dark:hover:border-gray-800 pr-6">
                 <span class="inline-flex justify-center items-center ml-4">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
                 </span>
                 <span class="ml-2 text-sm tracking-wide truncate">Profile</span>
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-zinc-200 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-green-500 dark:hover:border-gray-800 pr-6">
@@ -103,25 +153,22 @@ const DashboardHome = () => {
                 <span class="ml-2 text-sm tracking-wide truncate">Settings</span>
               </a>
             </li>
-            <li>
-              <Link to="/dashboard/feedbacks">Feedback</Link>
+
+            <li class="px-5 hidden md:block">
+              <div class="flex flex-row items-center mt-5 h-8">
+                <div class="text-sm font-light tracking-wide text-gray-400 uppercase">Feedback</div>
+              </div>
             </li>
-            {/* <li>
-              <Link to="/dashboard/issues">Issues</Link>
+
+            <li>
+              <Link to="/dashboard/feedbacks" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-zinc-200 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-green-500 dark:hover:border-gray-800 pr-6">
+                <span class="inline-flex justify-center items-center ml-4">
+                 <VscFeedback className="w-5 h-5"/>
+                </span>
+                <span class="ml-2 text-sm tracking-wide truncate">Feedback</span>
+              </Link>
             </li>
             
-            <li>
-              <Link to="/dashboard/files">Company's Files</Link>
-            </li> */}
-            {/* <li>
-              <Link>Tasks</Link>
-            </li> */}
-            {/* <li>
-              <Link>Celender</Link>
-            </li> */}
-            {/* <li>
-              <Link>My Meetings</Link>
-            </li> */}
           </ul>
         </div>
       </div>

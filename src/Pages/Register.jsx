@@ -1,15 +1,17 @@
 import React from "react";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import unlock from "../Assets/images/unlock.svg";
 import SocialLogin from "../Components/Login/SocialLogin";
 import Loading from "../Components/Shared/Loading";
+import Navbar from "../Components/Shared/Navbar";
 import auth from "../firebase.init";
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const {
     register,
     formState: { errors },
@@ -21,7 +23,7 @@ const Register = () => {
   const navigate = useNavigate();
   let from = location.state?.from?.pathname || "/";
 
-  if (user) {
+  if (user || gUser) {
     console.log(user);
     navigate(from, { replace: true });
   }
@@ -34,8 +36,11 @@ const Register = () => {
 
   return (
     <div>
-      <div className="mb-56 md:mb-0">
+      <div className="md:mb-24">
         <section className="h-screen">
+          <div className="bg-blue-300">
+            <Navbar />
+          </div>
           <div className="container mx-auto px-6 py-12 h-full">
             <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
               <div className="md:w-8/12 lg:w-6/12 mb-12 md:mb-0 hidden md:block">
@@ -101,7 +106,7 @@ const Register = () => {
                     Login.
                   </Link>
                 </p>
-                <SocialLogin />
+                <SocialLogin signInWithGoogle={signInWithGoogle} gUser={gUser} gLoading={gLoading} />
               </div>
             </div>
           </div>

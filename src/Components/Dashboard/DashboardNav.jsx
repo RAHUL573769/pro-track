@@ -1,10 +1,12 @@
 import { signOut } from "firebase/auth";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { FiMoreVertical } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const DashboardNav = () => {
+  const [user] = useAuthState(auth)
   const navigate = useNavigate();
   const logout = () => {
     signOut(auth);
@@ -138,42 +140,46 @@ const DashboardNav = () => {
 
             {/* profile */}
             <li>
-              <div className="dropdown dropdown-end">
-                <label
-                  tabIndex="0"
-                  className="btn btn-ghost btn-circle avatar online"
-                >
-                  <div className="w-10 rounded-full">
-                    <img src="https://placeimg.com/80/80/people" alt="" />
+              {
+                user ?
+                  <div className="dropdown dropdown-end">
+                    <label
+                      tabIndex="0"
+                      className="btn btn-ghost btn-circle avatar online"
+                    >
+                      <div className="w-10 rounded-full">
+                        <img src={user?.photoURL} alt="" />
+                      </div>
+                    </label>
+                    <ul
+                      tabIndex="0"
+                      className="menu menu-compact dropdown-content mt-3 p-4 shadow bg-base-100 rounded-box w-52"
+                    >
+                      <li>
+                        <a href="/">Admin console</a>
+                      </li>
+                      <li>
+                        <a href="/">My Settings</a>
+                      </li>
+                      <li>
+                        <a href="/">Privacy policy</a>
+                      </li>
+                      <li>
+                        <a href="/">
+                          More{" "}
+                          <span className="ml-24">
+                            <FiMoreVertical />
+                          </span>
+                        </a>
+                      </li>
+                      <hr />
+                      <li>
+                        <span onClick={() => logout()}>Logout</span>
+                      </li>
+                    </ul>
                   </div>
-                </label>
-                <ul
-                  tabIndex="0"
-                  className="menu menu-compact dropdown-content mt-3 p-4 shadow bg-base-100 rounded-box w-52"
-                >
-                  <li>
-                    <a href="/">Admin console</a>
-                  </li>
-                  <li>
-                    <a href="/">My Settings</a>
-                  </li>
-                  <li>
-                    <a href="/">Privacy policy</a>
-                  </li>
-                  <li>
-                    <a href="/">
-                      More{" "}
-                      <span className="ml-24">
-                        <FiMoreVertical />
-                      </span>
-                    </a>
-                  </li>
-                  <hr />
-                  <li>
-                    <span onClick={() => logout()}>Logout</span>
-                  </li>
-                </ul>
-              </div>
+                  : <Link className="font-bold text-white mr-4" to='/login'>SIGN IN</Link>
+              }
             </li>
           </ul>
         </div>
