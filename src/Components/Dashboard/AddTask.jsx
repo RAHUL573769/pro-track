@@ -33,7 +33,7 @@ const AddTask = () => {
            profile : user?.photoURL
         }
         console.log(alldata);
-        const url = `http://localhost:5001/issues`;
+        const url = `https://protrackbd.herokuapp.com/issues`;
         fetch(url, {
             method: "POST",
             body: JSON.stringify(alldata),
@@ -51,7 +51,7 @@ const AddTask = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5001/projects/${id}`;
+        const url = `https://protrackbd.herokuapp.com/projects/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProject(data))

@@ -29,7 +29,7 @@ const DashboardHome = () => {
     data: allProjects,
     refetch
   } = useQuery("project", () =>
-    fetch(`http://localhost:5001/projects?email=${email}`, {
+    fetch(`https://protrackbd.herokuapp.com/projects?email=${email}`, {
       method: "GET",
     }).then((res) => res.json())
   );

@@ -5,7 +5,7 @@ const Meetings = () => {
   const [meetings, setMeetings] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5001//meeting")
+    fetch("https://protrackbd.herokuapp.com//meeting")
       .then((res) => res.json())
       .then((data) => setMeetings(data));
   }, []);

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { AiTwotoneDelete } from 'react-icons/ai';
 
 const Project = ({ project, handleDelete }) => {
-  const { about, owner, projectTitle, startDate, endDate, team, email, _id } = project;
+  const { _id } = project;
 
   const navigate = useNavigate();
   const navigateToTask = id => {
