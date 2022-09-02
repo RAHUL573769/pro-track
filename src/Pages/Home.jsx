@@ -7,11 +7,13 @@ import Service from "../Components/Home/Service";
 import Summery from "../Components/Home/Summery";
 import Testimonials from "../Components/Home/Testimonials";
 import Txt from "../Components/Home/Txt";
+import Navbar from "../Components/Shared/Navbar";
 
 
 const Home = () => {
   return (
     <div>
+      <Navbar/>
       <Hero />
       <FeaturesSection></FeaturesSection>
       <Txt></Txt>

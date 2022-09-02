@@ -18,14 +18,14 @@ const TaskPage = () => {
     }
 
     useEffect(() => {
-        const url = `https://protrackbd.herokuapp.comprojects/${id}`;
+        const url = `http://localhost:5001/projects/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProject(data))
     }, [project, id]);
 
 
-    const { data: allTask, isLoading, refetch } = useQuery('task', () => fetch(`https://protrackbd.herokuapp.comprojectIssues/${id}`, {
+    const { data: allTask, isLoading, refetch } = useQuery('task', () => fetch(`http://localhost:5001/projectIssues/${id}`, {
         method: 'GET',
     }).then(res => res.json()));
 
