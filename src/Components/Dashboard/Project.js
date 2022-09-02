@@ -1,54 +1,37 @@
-import React, { useEffect, useState } from "react";
-import { useQuery } from "react-query";
-import Loading from "../Shared/Loading";
-import AddProjectModal from "./AddProjectModal";
-import Project from "./Project";
-const Projects = () => {
-  const {
-    data: allProjects,
-    isLoading,
-    refetch,
-  } = useQuery("project", () =>
-    fetch("http://localhost:5001/projects", {
-      method: "GET",
-    }).then((res) => res.json())
-  );
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AiTwotoneDelete } from 'react-icons/ai';
+
+const Project = ({ project, handleDelete }) => {
+  const { about, owner, projectTitle, startDate, endDate, team, email, _id } = project;
 
   if (isLoading) {
     return <Loading />;
   }
-  refetch();
-
-  const handleDelete = (id) => {
-    const url = `http://localhost:5001/projects/${id}`;
-    console.log(url);
-    fetch(url, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        const remaining = allProjects.filter((project) => project._id !== id);
-        refetch();
-      });
-  };
-
+  
   return (
-    <section className="lg:p-10 m-5">
-      <div className="flex justify-between mb-4">
-        <h1 className="lg:text-3xl text-xl font-semibold font-mono mt-5">
-          Project list
-        </h1>
-        <AddProjectModal />
-      </div>
-      <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 justify-items-center overscroll-y-none">
-        {allProjects.map((project) => (
-          <Project
-            key={project._id}
-            project={project}
-            handleDelete={handleDelete}
-          ></Project>
-        ))}
+    <div class="card lg:max-w-lg bg-blue-300 border-l-8 border-blue-600 text-primary-content cursor-pointer shadow-xl transform transition duration-500 hover:scale-110 ">
+      <div>
+        <div class="card-body">
+          <div className='flex justify-between gap-4 mb-3'>
+            <div>
+             
+              <h2 class="text-center text-2xl uppercase font-bold">{project.data?.projectTitle}</h2>
+            </div>
+            <button onClick={() => handleDelete(_id)}>
+              <AiTwotoneDelete className='text-rose-500 text-xl'/>
+            </button>
+
+          </div>
+          <div onClick={() => navigateToTask(_id)}>
+            <h2 className='font-bold text-header mb-2'>Owner Name: <small className="uppercase text-paragraph">{project.data?.owner}</small></h2>
+            <div className="flex justify-between gap-4 font-semibold mb-2">
+              <p className='font-bold text-header'>Start date:<small className="uppercase text-paragraph"> {project.data?.startDate}</small></p>
+              <p className='font-bold text-header'>End date:<small className="uppercase text-paragraph"> {project.data?.endDate}</small></p>
+            </div>
+            <h2 className='font-bold text-header'>Description : <span className='text-paragraph'>{project.data?.about}</span></h2>
+          </div>
+        </div>
       </div>
     </section>
   );

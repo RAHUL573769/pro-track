@@ -1,13 +1,36 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
-import Navbar from "../Shared/Navbar";
+import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 import { GrProjects } from "react-icons/gr";
+import { useQuery } from "react-query";
 import { BiTask } from "react-icons/bi";
 import { AiTwotoneCalendar } from "react-icons/ai";
+import { HiOutlineInbox } from "react-icons/hi";
 import { MdOutlineMeetingRoom } from "react-icons/md";
+import { VscFeedback } from "react-icons/vsc";
 import DashboardNav from "./DashboardNav";
+import logo from "../../images/facicon.png";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const DashboardHome = () => {
+  const { id } = useParams();
+
+  const navigate = useNavigate();
+
+  const navigateToTask = (id) => {
+    navigate(`/dashboard/projectDetails/${id}`);
+  };
+
+  const [user] = useAuthState(auth);
+  const email = user.email;
+
+  const { data: allProjects, refetch } = useQuery("project", () =>
+    fetch(`https://protrackbd.herokuapp.comprojects?email=${email}`, {
+      method: "GET",
+    }).then((res) => res.json())
+  );
+  refetch();
+
   return (
     <div className="flex">
       <div className="drawer drawer-mobile">
@@ -24,10 +47,10 @@ const DashboardHome = () => {
         <div className="drawer-side">
           <label for="my-drawer-2" className="drawer-overlay"></label>
 
-          <ul className="menu overflow-y-auto w-72 bg-base-100 text-base-content bg-background">
-            <h1 className="text-center text-3xl mt-2 font-bold text-rose-300">
-              ProTrack
-            </h1>
+          <ul className="menu overflow-y-auto lg:w-76 w-60  bg-base-100 text-base-content bg-background">
+            <div className="flex justify-center mt-3">
+              <img width={200} src={logo} alt="" />
+            </div>
             <div class="block w-72 h-1 mt-2 bg-gray-400 dark:bg-gray-700"></div>
 
             {/* <!-- Sidebar content here --> */}
@@ -111,6 +134,20 @@ const DashboardHome = () => {
             </li>
             <li>
               <Link
+                to="/dashboard/inbox"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-zinc-200 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-green-500 dark:hover:border-gray-800 pr-6"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <HiOutlineInbox className="w-5 h-5" />
+                </span>
+                <span class="ml-2 text-sm tracking-wide truncate">Inbox</span>
+                <span class="hidden md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-500 bg-red-50 rounded-full">
+                  1.2k
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/dashboard/meetings"
                 class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-zinc-200 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-green-500 dark:hover:border-gray-800 pr-6"
               >
@@ -128,13 +165,29 @@ const DashboardHome = () => {
             <li class="px-5 hidden md:block">
               <div class="flex flex-row items-center mt-5 h-8">
                 <div class="text-sm font-light tracking-wide text-gray-400 uppercase">
+                  Recent Projects
+                </div>
+              </div>
+            </li>
+            {allProjects
+              ?.slice(0 - 3)
+              .reverse()
+              .map((project) => (
+                <li className="ml-10 py-2 cursor-pointer text-sm tracking-wide">
+                  {project.data?.projectTitle}
+                </li>
+              ))}
+
+            <li class="px-5 hidden md:block">
+              <div class="flex flex-row items-center mt-5 h-8">
+                <div class="text-sm font-light tracking-wide text-gray-400 uppercase">
                   Settings
                 </div>
               </div>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="/dashboard/profile"
                 class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-zinc-200 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-green-500 dark:hover:border-gray-800 pr-6"
               >
                 <span class="inline-flex justify-center items-center ml-4">
@@ -154,7 +207,7 @@ const DashboardHome = () => {
                   </svg>
                 </span>
                 <span class="ml-2 text-sm tracking-wide truncate">Profile</span>
-              </a>
+              </Link>
             </li>
             <li>
               <a
@@ -188,25 +241,28 @@ const DashboardHome = () => {
                 </span>
               </a>
             </li>
-            <li>
-              <Link to="/dashboard/feedbacks">Feedback</Link>
-            </li>
-            {/* <li>
-              <Link to="/dashboard/profilr">Profile</Link>
-            </li> */}
 
-            {/* <li>
-              <Link to="/dashboard/files">Company's Files</Link>
-            </li> */}
-            {/* <li>
-              <Link>Tasks</Link>
-            </li> */}
-            {/* <li>
-              <Link>Celender</Link>
-            </li> */}
-            {/* <li>
-              <Link>My Meetings</Link>
-            </li> */}
+            <li class="px-5 hidden md:block">
+              <div class="flex flex-row items-center mt-5 h-8">
+                <div class="text-sm font-light tracking-wide text-gray-400 uppercase">
+                  Feedback
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <Link
+                to="/dashboard/feedbacks"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-zinc-200 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-green-500 dark:hover:border-gray-800 pr-6"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <VscFeedback className="w-5 h-5" />
+                </span>
+                <span class="ml-2 text-sm tracking-wide truncate">
+                  Feedback
+                </span>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

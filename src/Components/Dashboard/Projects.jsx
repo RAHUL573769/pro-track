@@ -1,27 +1,39 @@
 import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
+import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 import AddProjectModal from "./AddProjectModal";
+import DashboardHome from "./DashboardHome";
 import Project from "./Project";
 const Projects = () => {
+
+  const [user] = useAuthState(auth);
+  const email = user.email;
+
   
   const {
     data: allProjects,
     isLoading,
     refetch,
   } = useQuery("project", () =>
-    fetch("https://protrackbd.herokuapp.com/projects", {
+    fetch(`https://protrackbd.herokuapp.comprojects?email=${email}`, {
       method: "GET",
     }).then((res) => res.json())
   );
 
+  console.log(allProjects);
+
   if (isLoading) {
     return <Loading />;
   }
+  
   refetch();
 
+  console.log(allProjects);
+
   const handleDelete = (id) => {
-    const url = `https://protrackbd.herokuapp.com/projects/${id}`;
+    const url = `https://protrackbd.herokuapp.comprojects/${id}`;
     console.log(url);
     fetch(url, {
       method: "DELETE",
@@ -42,7 +54,9 @@ const Projects = () => {
         </h1>
         <AddProjectModal />
       </div>
-      <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 justify-items-center overscroll-y-none">
+      {
+        allProjects.length===0 ? <p className="text-yellow-500 text-xl text-center mt-32">You don't have any projects.. Please add a project</p> :
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 justify-items-center overscroll-y-none">
         {allProjects.map((project) => (
           <Project
             key={project._id}
@@ -50,7 +64,10 @@ const Projects = () => {
             handleDelete={handleDelete}
           ></Project>
         ))}
-      </div>
+      </div> 
+      }
+      
+     
     </section>
   );
 };

@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { GrAdd } from "react-icons/gr";
 import { useForm } from "react-hook-form";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from "../../firebase.init";
+import Loading from "../Shared/Loading";
 
 const AddProjectModal = () => {
+  const [user,loading] = useAuthState(auth)
+
   const {
     register,
     handleSubmit,
@@ -10,10 +15,17 @@ const AddProjectModal = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data, event) => {
-    const url = `https://protrackbd.herokuapp.com/projects`;
+    const member = data.team?.split(",")
+    const allData ={
+      email: user?.email,
+      member: member,
+      data: data
+
+    }
+    const url = `https://protrackbd.herokuapp.comprojects`;
     fetch(url, {
       method: "POST",
-      body: JSON.stringify(data),
+      body: JSON.stringify(allData),
       headers: {
         "content-type": "application/json",
       },
@@ -25,6 +37,11 @@ const AddProjectModal = () => {
       });
     event.preventDefault()
   };
+
+  if(loading){
+    return <Loading/>
+  }
+
 
 
   return (
@@ -138,14 +155,14 @@ const AddProjectModal = () => {
               htmlFor="owner"
               className="inline-block text-sm mt-5 font-medium text-gray-700"
             >
-              Team Name :
+              Invite Team Members :
             </label>
 
             <input
               type="text"
               name="team"
               id="team"
-              placeholder="Mark Don"
+              placeholder="eg: abc@gmail.com"
               className="border-solid border-2 ml-2 border-base-200 w-56 "
               {...register("team")}
               required
