@@ -1,65 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { CgProfile } from "react-icons/cg";
+import Loading from "../Shared/Loading";
+import { useQuery } from "react-query";
+import Task from "./Task";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+
 const MyTasks = () => {
-  const [mytasks, setmyTasks] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:3000/mytask.json")
-      .then((res) => res.json())
-      .then((data) => setmyTasks(data));
-  }, []);
+  const [status, setStatus] = useState();
+  const [user] = useAuthState(auth)
+
+
+  const { data: myTask, isLoading, refetch } = useQuery('task', () => fetch(`https://protrackbd.herokuapp.commyIssues?email=${user?.email}`, {
+    method: 'GET',
+  }).then(res => res.json()));
+
+  console.log(myTask);
+
+
+  if (isLoading) {
+    return <Loading />
+  }
+  refetch()
+
   return (
-    <div>
-      <h2 className="text-4xl font-bold text-center">My Tasks</h2>
-
-      <table class="table-fixed w-full border-collapse">
-
-        <thead>
-          <tr className='bg-[#0c4a6e] text-white text-xl'>
-
-            <th className="w-16 p-3 "> <CgProfile></CgProfile></th>
-            <th>Task</th>
-            <th>Owner</th>
-            <th>Priority</th>
-            <th>Status</th>
-            <th>Deadline</th>
-
-          </tr>
-        </thead>
-        <tbody>
-          {
-            mytasks.map(a => <tr>
-              <th>
-                <div class="avatar mr-3">
-                  <div>
-                    <img className="w-10 rounded-full" src={a.img} alt="" />
-                  </div>
-                </div>
-              </th>
-              <td>{a.task}</td>
-              <td>{a.owner}</td>
-              <td>
-                <select class="select select-white w-full max-w-xs bg-[#0284c7]  text-white font-bold">
-                  <option>High </option>
-                  <option>Medium</option>
-                  <option>Low</option>
-                </select>
-              </td>
-              <td>
-                <select class="select select-white w-full max-w-xs bg-[#0284c7] text-white font-bold">
-                  <option>Pending</option>
-                  <option>Progress</option>
-                  <option>Complete</option>
-                </select>
-              </td>
-              <td>{a.deadline}</td>
-            </tr>)
-          }
-
-
-        </tbody>
-
-      </table>
+    <div className="mx-3">
+      <h2 className="text-4xl font-bold p-2 text-violet-700">My Tasks</h2>
+     
+        {
+          myTask.map(task => <Task key={task._id} task={task}></Task>)
+        }
+      
     </div>
   );
 };
