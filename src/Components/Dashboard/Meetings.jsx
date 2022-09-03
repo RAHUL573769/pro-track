@@ -4,6 +4,14 @@ import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
 
 const Meetings = () => {
+  // const [meetings, setMeetings] = useState([]);
+
+  // useEffect(() => {
+  //   fetch("https://protrackbd.herokuapp.com//meeting")
+  //     .then((res) => res.json())
+  //     .then((data) => setMeetings(data));
+  // }, []);
+
   const {
     register,
     reset,
