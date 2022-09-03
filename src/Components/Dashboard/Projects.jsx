@@ -17,7 +17,7 @@ const Projects = () => {
     isLoading,
     refetch,
   } = useQuery("project", () =>
-    fetch(`https://protrackbd.herokuapp.comprojects?email=${email}`, {
+    fetch(`https://protrackbd.herokuapp.com/projects?email=${email}`, {
       method: "GET",
     }).then((res) => res.json())
   );
@@ -33,7 +33,7 @@ const Projects = () => {
   console.log(allProjects);
 
   const handleDelete = (id) => {
-    const url = `https://protrackbd.herokuapp.comprojects/${id}`;
+    const url = `https://protrackbd.herokuapp.com/projects/${id}`;
     console.log(url);
     fetch(url, {
       method: "DELETE",

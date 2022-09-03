@@ -10,7 +10,7 @@ const TaskDetails = () => {
   const [user] = useAuthState(auth)
 
   useEffect(() => {
-    const url = `https://protrackbd.herokuapp.comissues/${id}`;
+    const url = `https://protrackbd.herokuapp.com/issues/${id}`;
     fetch(url)
       .then(res => res.json())
       .then(data => setTaskDetails(data))
@@ -28,7 +28,7 @@ const TaskDetails = () => {
       status: event.target.value
     }
     console.log(statusUpdate);
-    fetch(`https://protrackbd.herokuapp.comupdate/${id}`, {
+    fetch(`https://protrackbd.herokuapp.com/update/${id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
