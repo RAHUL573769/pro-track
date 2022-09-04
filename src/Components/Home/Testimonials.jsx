@@ -15,7 +15,7 @@ import { FaQuoteRight } from 'react-icons/fa';
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
 
-
+//main
 const Testimonials = () => {
   const { data: reviews, isLoading, refetch } = useQuery('review', () => fetch(`https://protrackbd.herokuapp.com/feedback`, {
     method: 'GET',
