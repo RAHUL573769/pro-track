@@ -12,12 +12,24 @@ import "swiper/css/pagination";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { FaQuoteRight } from 'react-icons/fa';
+import { useQuery } from "react-query";
+import Loading from "../Shared/Loading";
 
-
+//main
 const Testimonials = () => {
+  const { data: reviews, isLoading, refetch } = useQuery('review', () => fetch(`https://protrackbd.herokuapp.com/feedback`, {
+    method: 'GET',
+  }).then(res => res.json()));
+
+  if (isLoading) {
+    return <Loading />;
+  }
+  //console.log(reviews);
+
+  refetch()
   return (
-    <div className="bg-[url('/src/images/testimonials.jpg')] lg:h-screen  my-24 bg-cover">
-      <div className="card lg:w-[584px] lg:h-[600px] p-14 bg-teal-500 shadow-xl lg:top-20 top-60 lg:left-[642px] rounded-none">
+    <div className="bg-[url('/src/images/testimonials.jpg')] lg:h-screen  my-24 bg-cover ">
+      <div className="card lg:w-[584px] lg:h-[600px] p-14 bg-teal-500 shadow-xl lg:top-40  top-60 lg:left-[900px] rounded-none">
         <h1 className="ml-10 mt-5 text-slate-600 font-serif tracking-wider font-bold">
           Testimonial
         </h1>
@@ -52,21 +64,16 @@ const Testimonials = () => {
               modules={[Autoplay, Pagination, Navigation]}
               className="mySwiper"
             >
-              <SwiperSlide>
-                <p className="text-white font-serif text-xl">
-                  ProTrack s the future of work with tasks, docs, goals, project management and more. Data silos and duplicate spend have no place in a modern workplace. ProTrack brings all of your work into one place—one app to replace them all. Whether you're proofing ads or working on sprints, ProTrack is fully customizable for every type and size of team.
-                </p>
-              </SwiperSlide>
-              <SwiperSlide>
-                <p className="text-white font-serif text-xl">
-                  For over 2 years, ProTrack has provided the best customer support and the most value per free end user of any issue tracking, help desk, incident and complaint management, or other process management software available. You can choose whether to take advantage of our Cloud SaaS environment or host ProTrack yourself on-premise.
-                </p>
-              </SwiperSlide>
-              <SwiperSlide className="mb-40">
-                <p className="text-white font-serif text-xl">
-                  If you are looking for a simple way how to manage and plan projects, track issues, estimating time, use ProTrack features, and in one place also cover test management, juno.one is the right choice for you. With clear dashboards, you are allowed to manage tasks and track bugs in a way you’ve seen never before.
-                </p>
-              </SwiperSlide>
+              {
+                reviews.slice(0 - 3).reverse().map((review) =>
+
+                  <SwiperSlide>
+                    <p className="mb-40 text-xl">{review.message?.slice(0, 300)}</p>
+                  </SwiperSlide>
+
+                )
+              }
+
             </Swiper>
           </div>
         </div>
