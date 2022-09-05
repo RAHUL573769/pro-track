@@ -9,6 +9,7 @@ import Files from "./Components/Dashboard/Files";
 import Inbox from "./Components/Dashboard/Inbox";
 import Issues from "./Components/Dashboard/Issues";
 import Meetings from "./Components/Dashboard/Meetings";
+import MyProfile from "./Components/Dashboard/MyProfie";
 import MyTasks from "./Components/Dashboard/MyTasks";
 import Profile from "./Components/Dashboard/Profile";
 import ProjectDetails from "./Components/Dashboard/ProjectDetails";
@@ -62,7 +63,7 @@ function App() {
             <Route path="login" element={<Login />}></Route>
             <Route path="issues" element={<Issues />}></Route>
             <Route path="calender" element={<Calender />}></Route>
-            <Route path="profile" element={<Profile />}></Route>
+            <Route path="profile" element={<MyProfile />}></Route>
             <Route path="meetings" element={<Meetings />}></Route>
             <Route path="feedbacks" element={<Feedback></Feedback>}></Route>
             <Route path="inbox" element={<Inbox/>}></Route>
