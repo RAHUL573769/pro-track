@@ -8,7 +8,6 @@ import auth from "../../firebase.init";
 
 const MyTasks = () => {
 
-  const [status, setStatus] = useState();
   const [user] = useAuthState(auth)
 
 

@@ -22,7 +22,7 @@ const AddProjectModal = () => {
       data: data
 
     }
-    const url = `https://protrackbd.herokuapp.com/projects`;
+    const url = `http://localhost:5001/projects`;
     fetch(url, {
       method: "POST",
       body: JSON.stringify(allData),
