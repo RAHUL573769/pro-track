@@ -17,7 +17,7 @@ const MyProfile = () => {
           const info={education,location,number,email}
           
           console.log(info);
-          fetch(`http://localhost:5001/info/${email}`,{
+          fetch(`https://protrackbd.herokuapp.com/info/${email}`,{
             method: 'PUT',
             headers: {
               'content-type': 'application/json',
