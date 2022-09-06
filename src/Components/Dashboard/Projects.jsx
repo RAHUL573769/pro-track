@@ -28,7 +28,7 @@ const Projects = () => {
     data: invitedProjects,
     isLoading2,
   } = useQuery("project", () =>
-    fetch(`http://localhost:5001/invitedTeam/${email}`, {
+    fetch(`https://protrackbd.herokuapp.com/invitedTeam/${email}`, {
       method: "GET",
     }).then((res) => res.json())
   );
@@ -87,23 +87,6 @@ const Projects = () => {
             invited team projects
           </h1>
         </div>
-        {
-        invitedProjects.length === 0 ? <p className="text-yellow-500 text-xl text-center mt-32">You don't have any projects.. Please add a project</p> :
-          <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 justify-items-center overscroll-y-none">
-            {
-              invitedProjects.map(project2 => console.log(project2))
-            }
-            {/* {invitedProjects.map((project2) => (
-              console.log(project2);
-              // <SharedProject
-              // key={project2._id}
-              // project = {project2}
-              // >
-
-              // </SharedProject>
-            ))} */}
-          </div>
-      }
       </div>
 
 

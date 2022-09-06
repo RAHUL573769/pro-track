@@ -12,17 +12,19 @@ const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  let from = location.state?.from?.pathname || "/";
+
+
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const onSubmit = (data) =>
-    createUserWithEmailAndPassword(data.email, data.password);
-  const location = useLocation();
-  const navigate = useNavigate();
-  let from = location.state?.from?.pathname || "/";
-
+  const onSubmit = (data) =>{
+    createUserWithEmailAndPassword(data.email, data.displayName, data.password);
   if (user || gUser) {
     console.log(user);
     navigate(from, { replace: true });
@@ -33,6 +35,10 @@ const Register = () => {
   if (error) {
     console.log(error);
   }
+  console.log(data);
+  }
+    
+
 
   return (
     <div>
@@ -54,9 +60,10 @@ const Register = () => {
                   <div className="form-control w-full">
                     <input
                       type="text"
+                      name="displayName"
                       placeholder="Your Name"
                       className="input input-bordered w-full"
-                      {...register("name", { required: true })}
+                      {...register("displayName", { required: true })}
                     />
                     <label className="label">
                       <span className="label-text-alt">

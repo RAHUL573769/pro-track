@@ -9,6 +9,8 @@ import auth from '../../firebase.init';
 const Profile = () => {
     const [loadProfile, setLoadProfile] = useState([]);
     const [user] = useAuthState(auth);
+
+    console.log(user);
     
     // useEffect(() => {
 
@@ -38,7 +40,9 @@ const Profile = () => {
                         <div className="w-40 h-40 mt-5 rounded-full">
                             <img src={user?.photoURL} alt="" />
                         </div>
+                        
                     </div>
+                    <button className='btn bg-purple-500 hover:bg-purple-700 ml-8 my-10'>Edit profile</button>
                     </figure>
                 <div className="card-body">
                 <div>
