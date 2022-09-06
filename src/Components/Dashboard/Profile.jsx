@@ -9,7 +9,7 @@ const Profile = ({isRealod}) => {
         const email=user?.email
       console.log(email)
      
-        fetch(`http://localhost:5001/userinfo?email=${email}`)
+        fetch(`https://protrackbd.herokuapp.com/userinfo?email=${email}`)
         .then(res=>res.json())
         .then(data=>{
            
