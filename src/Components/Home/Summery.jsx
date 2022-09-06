@@ -10,7 +10,7 @@ const Summery = () => {
   return (
 
     <div>
-    <div className="-mt-20">
+    <div>
      <div className='  bg-base lg:py-48 lg:my-24'>
     <h2 className="text-4xl font-bold text-center  text-header -mt-24 ">Main work summery of <span classname="text-blue">Pro-Track</span></h2>
     </div>
