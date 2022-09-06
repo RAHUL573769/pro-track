@@ -13,7 +13,7 @@ const AboutUs = () => {
           About US
         </h1>
       </div>
-      <div className="grid grid-cols-2 gap-4 m-24">
+      <div className="gap-4 min-h-screen grid lg:grid-cols-2 m-24 p-16 sm:grid-cols-1 m-2 p-4">
         <div>
           <h1 className="text-3xl text-red-700 text-center font-bold">
             Our Vision
@@ -34,7 +34,7 @@ const AboutUs = () => {
           <img src={team} alt="" />
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-4 m-24">
+      <div className="gap-4 min-h-screen grid lg:grid-cols-2 m-24 p-16 sm:grid-cols-1 m-2 p-4">
         <div>
           <img src={process} alt="" />
         </div>
