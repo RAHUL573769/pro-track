@@ -28,8 +28,8 @@ const Testimonials = () => {
 
   refetch()
   return (
-    <div className="bg-[url('/src/images/testimonials.jpg')] lg:h-screen lg:max-h-96 max-w-full my-24 bg-cover">
-      <div className="card lg:max-h-72 lg:max-w-screen-lg p-14 bg-teal-500 shadow-xl lg:top-40  top-60 lg:left-[320px] lg:pb-24 rounded-none">
+    <div className="bg-[url('/src/images/testimonials.jpg')] lg:h-screen  my-24 bg-cover ">
+      <div className="card lg:w-[584px] lg:h-[600px] p-14 bg-teal-500 shadow-xl lg:top-40  top-60 lg:left-[780px] rounded-none">
         <h1 className="ml-10 mt-5 text-slate-600 font-serif tracking-wider font-bold">
           Testimonial
         </h1>

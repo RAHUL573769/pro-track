@@ -15,12 +15,12 @@ const Navbar = () => {
   };
   const navItems = (
     <>
-      <li>
+      {/* <li>
         <Link to="/">Product</Link>
       </li>
       <li>
         <Link to="/">Customers</Link>
-      </li>
+      </li> */}
       <li>
         <Link to="/">Support</Link>
       </li>
