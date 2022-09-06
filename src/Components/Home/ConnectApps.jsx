@@ -15,13 +15,13 @@ const ConnectApps = () => {
 
             </div>
             <div>
-                <div className='grid lg:grid-cols-6 lg:mx-20 my-32 mr-24 sm:max-h-20 sm:max-w-sm item-center relative'>
-                    <img className='w-16 absolute rounded-full top-40 -left-20' src={image4} alt="" />
-                    <img className='w-16 absolute left-64 rounded-full ' src={image5} alt="" />
-                    <img className='w-16 absolute bottom-32  left-16' src={image6} alt="" />
-                    <img className='w-16 absolute top-40 left-16' src={image7} alt="" />
-                    <img className='w-16 absolute left-56 bottom-24 rounded-full' src={image8} alt="" />
-                    <img className='w-16 absolute top-28 left-48' src={image9} alt="" />
+                <div className='grid lg:grid-cols-6 lg:mx-20 my-32 mr-24 item-center relative'>
+                    <img className='w-16 lg:absolute rounded-full top-40 -left-20' src={image4} alt="" />
+                    <img className='w-16 lg:absolute left-64 rounded-full ' src={image5} alt="" />
+                    <img className='w-16 lg:absolute bottom-32  left-16' src={image6} alt="" />
+                    <img className='w-16 lg:absolute top-40 left-16' src={image7} alt="" />
+                    <img className='w-16 lg:absolute left-56 bottom-24 rounded-full' src={image8} alt="" />
+                    <img className='w-16 lg:absolute top-28 left-48' src={image9} alt="" />
                     <img className='w-16 mr-10' src={image10} alt="" />
                     <img className='w-16 absolute -left-24  bottom-32 bg-white rounded-full' src={image11} alt="" />
                 </div>
